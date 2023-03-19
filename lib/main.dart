@@ -1,7 +1,22 @@
+import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'injection.dart';
+
+Future<void > main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await configureDependencies();
+
+  return runZonedGuarded(() async {
+    runApp(const MyApp());
+  }, (error, stack) {
+    if (kDebugMode) {
+      print(stack);
+      print(error);
+    }
+  });
 }
 
 class MyApp extends StatelessWidget {
