@@ -1,1 +1,1 @@
-/** Файл для экспорта */
+export 'bottom_loader.dart';

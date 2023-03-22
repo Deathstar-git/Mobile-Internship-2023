@@ -11,15 +11,19 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:mobile_internship_1/application/auth_bloc/auth_bloc.dart'
     as _i4;
+import 'package:mobile_internship_1/application/marginality_bloc/marginality_bloc.dart'
+    as _i9;
+import 'package:mobile_internship_1/application/marginality_choice_bloc/marginality_choice_bloc.dart'
+    as _i10;
 import 'package:mobile_internship_1/domain/features/auth/i_auth_repository.dart'
     as _i7;
 import 'package:mobile_internship_1/infrastructure/common/injection_module.dart'
-    as _i10;
+    as _i12;
 import 'package:mobile_internship_1/infrastructure/features/auth/auth_repository.dart'
     as _i8;
 import 'package:mobile_internship_1/ui/navigation/routes.gr.dart' as _i3;
 import 'package:shared_preferences/shared_preferences.dart'
-    as _i9; // ignore_for_file: unnecessary_lambdas
+    as _i11; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 extension GetItInjectableX on _i1.GetIt {
@@ -39,7 +43,9 @@ extension GetItInjectableX on _i1.GetIt {
     gh.lazySingleton<_i5.Dio>(() => serviceModule.dio);
     gh.lazySingleton<_i6.FlutterSecureStorage>(() => serviceModule.storage);
     gh.factory<_i7.IAuthRepository>(() => _i8.AuthRepository());
-    await gh.lazySingletonAsync<_i9.SharedPreferences>(
+    gh.factory<_i9.MarginalityBloc>(() => _i9.MarginalityBloc());
+    gh.factory<_i10.MarginalityChoiceBloc>(() => _i10.MarginalityChoiceBloc());
+    await gh.lazySingletonAsync<_i11.SharedPreferences>(
       () => serviceModule.prefs,
       preResolve: true,
     );
@@ -47,4 +53,4 @@ extension GetItInjectableX on _i1.GetIt {
   }
 }
 
-class _$ServiceModule extends _i10.ServiceModule {}
+class _$ServiceModule extends _i12.ServiceModule {}
