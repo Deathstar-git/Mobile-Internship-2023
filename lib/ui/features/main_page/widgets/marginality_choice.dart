@@ -1,7 +1,7 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:mobile_internship_1/ui/widgets/widgets.dart';
 import '../../../../application/marginality_choice_bloc/marginality_choice_bloc.dart';
 
 //Виджет для выбора маржинальности(Маржинальность проекта, Маржинальность сотрудника и т.д.)
@@ -23,43 +23,88 @@ class _MarginalityChoiceState extends State<MarginalityChoice> {
   Widget build(BuildContext context) {
     return BlocBuilder<MarginalityChoiceBloc, MarginalityChoiceState>(
         builder: (context, state) {
-          return Center(
-              child: DropdownButtonHideUnderline(
-                child: DropdownButton2(items: [], // cписок выборов маржинальности
-                  // hint: Text(
-                  //   'Select Item',
-                  //   style: TextStyle(
-                  //     fontSize: 14,
-                  //     color: Theme.of(context).hintColor,
-                  //   ),
-                  // ),
-                  // items: items
-                  //     .map((item) => DropdownMenuItem<String>(
-                  //   value: item,
-                  //   child: Text(
-                  //     item,
-                  //     style: const TextStyle(
-                  //       fontSize: 14,
-                  //     ),
-                  //   ),
-                  // ))
-                  //     .toList(),
-                  // value: selectedValue,
-                  // onChanged: (value) {
-                  //   setState(() {
-                  //     selectedValue = value as String;
-                  //   });
-                  // },
-                  // buttonStyleData: const ButtonStyleData(
-                  //   height: 40,
-                  //   width: 140,
-                  // ),
-                  // menuItemStyleData: const MenuItemStyleData(
-                  //   height: 40,
-                  // ),
-                ),
-              ),
-            );
+          return state.when(
+              initial: () {
+                return const Text('initialization');
+              },
+              loading: () {
+                return const BottomLoader();
+              },
+              loaded: (choices, selectedValue) {
+                return Center(
+                  child: DropdownButtonHideUnderline(
+                    child: DropdownButton2(
+                      hint: Text(
+                        selectedValue,
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Theme.of(context).hintColor,
+                        ),
+                      ),
+                      items: choices
+                          .map((item) => DropdownMenuItem<String>(
+                        value: item,
+                        child: Text(
+                          item,
+                          style: const TextStyle(
+                            fontSize: 14,
+                          ),
+                        ),
+                      ))
+                          .toList(),
+                      value: selectedValue,
+                      onChanged: (value) {
+                        context.read<MarginalityChoiceBloc>().add(MarginalityChoiceEvent.valueChanged(value as String));
+                      },
+                      buttonStyleData: const ButtonStyleData(
+                        height: 40,
+                        width: 300,
+                      ),
+                      menuItemStyleData: const MenuItemStyleData(
+                        height: 40,
+                      ),
+                    ),
+                  ),
+                );
+              },
+              itemSelected: (choices, selectedValue) {
+                return Center(
+                  child: DropdownButtonHideUnderline(
+                    child: DropdownButton2(
+                      hint: Text(
+                        selectedValue,
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Theme.of(context).hintColor,
+                        ),
+                      ),
+                      items: choices
+                          .map((item) => DropdownMenuItem<String>(
+                        value: item,
+                        child: Text(
+                          item,
+                          style: const TextStyle(
+                            fontSize: 14,
+                          ),
+                        ),
+                      ))
+                          .toList(),
+                      value: selectedValue,
+                      onChanged: (value) {
+                        context.read<MarginalityChoiceBloc>().add(MarginalityChoiceEvent.valueChanged(value as String));
+                      },
+                      buttonStyleData: const ButtonStyleData(
+                        height: 40,
+                        width: 300,
+                      ),
+                      menuItemStyleData: const MenuItemStyleData(
+                        height: 40,
+                      ),
+                    ),
+                  ),
+                );
+          }
+          );
         }
     );
   }

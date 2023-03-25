@@ -1,13 +1,14 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_internship_1/ui/navigation/routes.gr.dart';
-
+import 'bloc_observer.dart';
 import 'injection.dart';
 
 Future<void > main() async{
   WidgetsFlutterBinding.ensureInitialized();
-
+  Bloc.observer = SimpleBlocObserver();
   await configureDependencies();
 
   return runZonedGuarded(() async {

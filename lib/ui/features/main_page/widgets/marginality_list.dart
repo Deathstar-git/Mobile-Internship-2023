@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_internship_1/application/marginality_bloc/marginality_bloc.dart';
+import 'package:mobile_internship_1/ui/widgets/bottom_loader.dart';
 
 //Виджет для отображения маржинальности(Маржинальность проекта, Маржинальность сотрудника и т.д.)
 class MarginalityList extends StatefulWidget {
@@ -21,7 +22,7 @@ class _MarginalityListState extends State<MarginalityList> {
   Widget build(BuildContext context) {
     return BlocBuilder<MarginalityBloc, MarginalityState>(
       builder: (context, state) {
-            return const Center(child: CircularProgressIndicator());
+            return const BottomLoader();
         }
     );
   }
