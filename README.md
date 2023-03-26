@@ -1,16 +1,6 @@
-# mobile_internship_1
+## Главная страница
+<img src="https://i.ibb.co/B4XFzpN/Screenshot-2023-03-26-18-57-29-399-com-aspirity-mobile-internship-1.jpg" width="400" height="700" />
 
-A new Flutter project.
+## Главная страница c выпадающим списком
+<img src="https://i.ibb.co/t4hSF4h/Screenshot-2023-03-26-18-57-37-926-com-aspirity-mobile-internship-1.jpg" width="400" height="700" />
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
