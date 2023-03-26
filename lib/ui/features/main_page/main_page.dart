@@ -14,6 +14,7 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false, //избегание overflow при появлении клавиатуры
       appBar: AppBar(
           backgroundColor: AppColors.black_1,
           centerTitle: true,
@@ -62,11 +63,11 @@ class MainPage extends StatelessWidget {
         ],
         child: Column(children: const [
           SizedBox(
-            height: 100,
+            height: 60,
             child: MarginalityChoice()
           ),
           SizedBox(
-            height: 100,
+            height: 550,
             child:MarginalityList()
           )
         ],),
