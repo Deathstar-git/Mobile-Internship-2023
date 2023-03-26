@@ -16,6 +16,13 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           backgroundColor: AppColors.black_1,
+          centerTitle: true,
+          leading: IconButton(
+            icon: const Icon(Icons.density_medium_rounded, color: AppColors.gray_2),
+            tooltip: 'Меню',
+            onPressed: () {
+            },
+          ),
           title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children:[
@@ -34,6 +41,14 @@ class MainPage extends StatelessWidget {
                  
                 ]
               ),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.filter_alt, color: AppColors.gray_2),
+              tooltip: 'Фильтры',
+              onPressed: () {
+              },
+            ),
+          ],
           ),
 
       body: MultiBlocProvider(
