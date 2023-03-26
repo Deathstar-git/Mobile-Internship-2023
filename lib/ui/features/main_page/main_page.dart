@@ -1,9 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_internship_1/application/marginality_bloc/marginality_bloc.dart';
 import 'package:mobile_internship_1/ui/common/colors.dart';
 import 'package:mobile_internship_1/ui/features/main_page/widgets/marginality_choice.dart';
 import 'package:mobile_internship_1/ui/features/main_page/widgets/marginality_list.dart';
+import 'package:mobile_internship_1/ui/navigation/routes.gr.dart';
 import '../../../application/marginality_choice_bloc/marginality_choice_bloc.dart';
 import '../../../injection.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -47,6 +49,7 @@ class MainPage extends StatelessWidget {
               icon: const Icon(Icons.filter_alt, color: AppColors.gray_2),
               tooltip: 'Фильтры',
               onPressed: () {
+                context.router.push(const FilterRoute());
               },
             ),
           ],
