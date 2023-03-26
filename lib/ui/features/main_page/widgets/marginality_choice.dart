@@ -54,7 +54,8 @@ class _MarginalityChoiceState extends State<MarginalityChoice> {
                           .toList(),
                       value: selectedValue,
                       onChanged: (value) {
-                        context.read<MarginalityChoiceBloc>().add(MarginalityChoiceEvent.valueChanged(value as String));
+                        context.read<MarginalityChoiceBloc>().sharedPref.setMarginalityChoice(value as String);
+                        context.read<MarginalityChoiceBloc>().add(const MarginalityChoiceEvent.valueChanged());
                       },
                       buttonStyleData: const ButtonStyleData(
                         height: 40,
@@ -91,7 +92,8 @@ class _MarginalityChoiceState extends State<MarginalityChoice> {
                           .toList(),
                       value: selectedValue,
                       onChanged: (value) {
-                        context.read<MarginalityChoiceBloc>().add(MarginalityChoiceEvent.valueChanged(value as String));
+                        context.read<MarginalityChoiceBloc>().sharedPref.setMarginalityChoice(value as String);
+                        context.read<MarginalityChoiceBloc>().add(const MarginalityChoiceEvent.valueChanged());
                       },
                       buttonStyleData: const ButtonStyleData(
                         height: 40,

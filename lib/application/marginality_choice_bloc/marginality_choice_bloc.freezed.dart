@@ -19,19 +19,19 @@ mixin _$MarginalityChoiceEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String selectedValue) valueChanged,
+    required TResult Function() valueChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String selectedValue)? valueChanged,
+    TResult? Function()? valueChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String selectedValue)? valueChanged,
+    TResult Function()? valueChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -112,7 +112,7 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String selectedValue) valueChanged,
+    required TResult Function() valueChanged,
   }) {
     return started();
   }
@@ -121,7 +121,7 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String selectedValue)? valueChanged,
+    TResult? Function()? valueChanged,
   }) {
     return started?.call();
   }
@@ -130,7 +130,7 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String selectedValue)? valueChanged,
+    TResult Function()? valueChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -180,8 +180,6 @@ abstract class _$$ValueChangedCopyWith<$Res> {
   factory _$$ValueChangedCopyWith(
           _$ValueChanged value, $Res Function(_$ValueChanged) then) =
       __$$ValueChangedCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String selectedValue});
 }
 
 /// @nodoc
@@ -191,79 +189,54 @@ class __$$ValueChangedCopyWithImpl<$Res>
   __$$ValueChangedCopyWithImpl(
       _$ValueChanged _value, $Res Function(_$ValueChanged) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? selectedValue = null,
-  }) {
-    return _then(_$ValueChanged(
-      null == selectedValue
-          ? _value.selectedValue
-          : selectedValue // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$ValueChanged implements ValueChanged {
-  const _$ValueChanged(this.selectedValue);
-
-  @override
-  final String selectedValue;
+  const _$ValueChanged();
 
   @override
   String toString() {
-    return 'MarginalityChoiceEvent.valueChanged(selectedValue: $selectedValue)';
+    return 'MarginalityChoiceEvent.valueChanged()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ValueChanged &&
-            (identical(other.selectedValue, selectedValue) ||
-                other.selectedValue == selectedValue));
+        (other.runtimeType == runtimeType && other is _$ValueChanged);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selectedValue);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ValueChangedCopyWith<_$ValueChanged> get copyWith =>
-      __$$ValueChangedCopyWithImpl<_$ValueChanged>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String selectedValue) valueChanged,
+    required TResult Function() valueChanged,
   }) {
-    return valueChanged(selectedValue);
+    return valueChanged();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String selectedValue)? valueChanged,
+    TResult? Function()? valueChanged,
   }) {
-    return valueChanged?.call(selectedValue);
+    return valueChanged?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String selectedValue)? valueChanged,
+    TResult Function()? valueChanged,
     required TResult orElse(),
   }) {
     if (valueChanged != null) {
-      return valueChanged(selectedValue);
+      return valueChanged();
     }
     return orElse();
   }
@@ -301,12 +274,7 @@ class _$ValueChanged implements ValueChanged {
 }
 
 abstract class ValueChanged implements MarginalityChoiceEvent {
-  const factory ValueChanged(final String selectedValue) = _$ValueChanged;
-
-  String get selectedValue;
-  @JsonKey(ignore: true)
-  _$$ValueChangedCopyWith<_$ValueChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory ValueChanged() = _$ValueChanged;
 }
 
 /// @nodoc
