@@ -21,29 +21,29 @@ class MarginalityChoiceBloc extends Bloc<MarginalityChoiceEvent, MarginalityChoi
     'Маржинальность компании'
   ];
 
-  Future<void> onStarted(
+  Future<void> _onStarted(
     Started event,
     Emitter<MarginalityChoiceState> emit,
     ) async {
   emit(const _Loading());
   Future.delayed(const Duration(milliseconds:100));
-  selectedValue = await sharedPref.getMarginalityChoice();
+  selectedValue = sharedPref.getMarginalityChoice();
   emit(_Loaded(choices, selectedValue));
 }
-Future<void> onValueChanged(
+Future<void> _onValueChanged(
     ValueChanged event,
     Emitter<MarginalityChoiceState> emit,
     ) async {
-    selectedValue = await sharedPref.getMarginalityChoice();
+    selectedValue = sharedPref.getMarginalityChoice();
   emit(_ItemSelected(choices, selectedValue));
 }
 
   MarginalityChoiceBloc(this.sharedPref) : super(const _Initial()) {
     on<MarginalityChoiceEvent>((event, emit) {
       event.map(started: (started) {
-        onStarted(started, emit);
+        _onStarted(started, emit);
       }, valueChanged: (valueChanged) {
-        onValueChanged(valueChanged, emit);
+        _onValueChanged(valueChanged, emit);
       });
     },
       transformer: sequential());

@@ -1,13 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mobile_internship_1/application/marginality_bloc/marginality_bloc.dart';
 import 'package:mobile_internship_1/ui/common/colors.dart';
 import 'package:mobile_internship_1/ui/features/main_page/widgets/marginality_choice.dart';
 import 'package:mobile_internship_1/ui/features/main_page/widgets/marginality_list.dart';
 import 'package:mobile_internship_1/ui/navigation/routes.gr.dart';
-import '../../../application/marginality_choice_bloc/marginality_choice_bloc.dart';
-import '../../../injection.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 //Главная страница
 class MainPage extends StatelessWidget {
@@ -55,16 +51,7 @@ class MainPage extends StatelessWidget {
           ],
           ),
 
-      body: MultiBlocProvider(
-        providers: [
-          BlocProvider<MarginalityBloc>(
-              create: (_) => getIt<MarginalityBloc>(),
-          ),
-          BlocProvider<MarginalityChoiceBloc>(
-              create: (_) => getIt<MarginalityChoiceBloc>()..add(const MarginalityChoiceEvent.started()),
-          ),
-        ],
-        child: Column(children: const [
+      body:Column(children: const [
           SizedBox(
             height: 60,
             child: MarginalityChoice()
@@ -73,7 +60,7 @@ class MainPage extends StatelessWidget {
             height: 550,
             child:MarginalityList()
           )
-        ],),
+        ],
       ),
       // create: (_) => getIt<MarginalityBloc>(),
     );

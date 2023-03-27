@@ -15,10 +15,12 @@ import 'package:mobile_internship_1/application/marginality_bloc/marginality_blo
     as _i9;
 import 'package:mobile_internship_1/application/marginality_choice_bloc/marginality_choice_bloc.dart'
     as _i12;
+import 'package:mobile_internship_1/application/marginality_filter_bloc/marginality_filter_bloc.dart'
+    as _i13;
 import 'package:mobile_internship_1/domain/features/auth/i_auth_repository.dart'
     as _i7;
 import 'package:mobile_internship_1/infrastructure/common/injection_module.dart'
-    as _i13;
+    as _i14;
 import 'package:mobile_internship_1/infrastructure/features/auth/auth_repository.dart'
     as _i8;
 import 'package:mobile_internship_1/infrastructure/features/prefs/shared_prefs.dart'
@@ -54,8 +56,10 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i11.SharedPref(gh<_i10.SharedPreferences>()));
     gh.factory<_i12.MarginalityChoiceBloc>(
         () => _i12.MarginalityChoiceBloc(gh<_i11.SharedPref>()));
+    gh.factory<_i13.MarginalityFilterBloc>(
+        () => _i13.MarginalityFilterBloc(gh<_i11.SharedPref>()));
     return this;
   }
 }
 
-class _$ServiceModule extends _i13.ServiceModule {}
+class _$ServiceModule extends _i14.ServiceModule {}

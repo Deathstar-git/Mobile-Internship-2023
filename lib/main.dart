@@ -3,6 +3,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_internship_1/ui/navigation/routes.gr.dart';
+import 'application/marginality_bloc/marginality_bloc.dart';
+import 'application/marginality_choice_bloc/marginality_choice_bloc.dart';
+import 'application/marginality_filter_bloc/marginality_filter_bloc.dart';
 import 'bloc_observer.dart';
 import 'injection.dart';
 
@@ -27,7 +30,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return MultiBlocProvider(
+    providers: [
+    BlocProvider<MarginalityChoiceBloc>(
+    create: (_) => getIt<MarginalityChoiceBloc>()..add(const MarginalityChoiceEvent.started()),
+    ),
+    BlocProvider<MarginalityBloc>(
+    create: (_) => getIt<MarginalityBloc>(),
+    ),
+    BlocProvider<MarginalityFilterBloc>(
+    create: (_) => getIt<MarginalityFilterBloc>()..add(const MarginalityFilterEvent.started()),
+    ),
+    ],
+    child: MaterialApp.router(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false, //Выключаем Debug баннер
       theme: ThemeData(
@@ -35,6 +50,7 @@ class MyApp extends StatelessWidget {
       ),
         routerDelegate: _appRouter.delegate(),
         routeInformationParser: _appRouter.defaultRouteParser(),
+    )
     );
   }
 }
