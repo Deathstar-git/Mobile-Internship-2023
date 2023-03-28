@@ -13,7 +13,7 @@ class MarginalityTableCalendar extends StatelessWidget {
   const MarginalityTableCalendar({
     super.key,
     required this.selectedPeriod, required this.selectedYear});
-  
+  //TODO: Реализовать выбор месяца и квартала аналогично,вынести в отдельный виджет
   void _pickYear(BuildContext context) {
     showDialog(
         context: context,
@@ -44,21 +44,30 @@ class MarginalityTableCalendar extends StatelessWidget {
                 view: DateRangePickerView.decade,
                 allowViewNavigation: false,
                 onSelectionChanged: (DateRangePickerSelectionChangedArgs args) {
+                  if (args.value.endDate == null) {
+                    context.read<MarginalityFilterBloc>().
+                    sharedPref.setMarginalityPeriodYear(
+                        '${DateFormat('dd/MM/yyyy').
+                        format(args.value.startDate)} - ${DateFormat('dd/MM/yyyy')
+                            .format(DateTime(args.value.startDate.year, 12, 31))}');
+                  }else{
+                    context.read<MarginalityFilterBloc>().
+                    sharedPref.setMarginalityPeriodYear(
+                        '${DateFormat('dd/MM/yyyy').
+                        format(args.value.startDate)} - ${DateFormat('dd/MM/yyyy')
+                            .format(args.value.endDate ?? args.value.startDate)}');
+                  }
                   context.read<MarginalityFilterBloc>().
-                  sharedPref.setMarginalityPeriodYear(
-                      '${DateFormat('dd/MM/yyyy').
-                      format(args.value.startDate)} - ${DateFormat('dd/MM/yyyy')
-                      .format(args.value.endDate ?? args.value.startDate)}');
-                  context.read<MarginalityFilterBloc>().add(const MarginalityFilterEvent.valueChanged());
+                  add(const MarginalityFilterEvent.valueChanged());
                 },
                 selectionMode: DateRangePickerSelectionMode.range,
-                showActionButtons: true,
-                onCancel: () {
-                  Navigator.pop(context);
-                },
-                onSubmit: (Object? value) {
-                  Navigator.pop(context);
-                },
+                // showActionButtons: true,
+                // onCancel: () {
+                //   Navigator.pop(context);
+                // },
+                // onSubmit: (Object? value) {
+                //   Navigator.pop(context);
+                // },
               )
           )
         ),
@@ -66,12 +75,19 @@ class MarginalityTableCalendar extends StatelessWidget {
   }
   @override
   Widget build(BuildContext context) {
-    return OutlinedButton(
-      onPressed: () {
-        _pickYear(context);
-      },
-      child: Text(selectedYear),
-    );
+    //может поменять на switch case, а то как-то несолидно
+    if (selectedPeriod == 'Год'){
+
+      return OutlinedButton(
+        onPressed: () {
+          _pickYear(context);
+        },
+        child: Text(selectedYear),
+      );
+    } else {
+      return const Text('Затычка');
+  }
+
 
   }
 }
