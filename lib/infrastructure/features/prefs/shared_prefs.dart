@@ -1,12 +1,16 @@
 import 'package:injectable/injectable.dart';
+import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 @injectable
 class SharedPref {
   final String _marginalityChoiceItem = 'Маржинальность проекта';
   final String _marginalityPeriodItem = 'Квартал';
-  SharedPreferences pref;
 
+  final String _marginalityPeriodYear =  '${DateFormat('dd/MM/yyyy').
+  format(DateTime.now())} - ${DateFormat('dd/MM/yyyy')
+      .format(DateTime.now())}';
+  SharedPreferences pref;
   SharedPref(this.pref);
 
   String getMarginalityChoice(){
@@ -20,6 +24,12 @@ class SharedPref {
   }
   Future<void> setMarginalityPeriodItem(String marginalityPeriodItem) async {
     await pref.setString(_marginalityPeriodItem, marginalityPeriodItem);
+  }
+  String getMarginalityPeriodYear(){
+    return pref.getString(_marginalityPeriodYear) ?? _marginalityPeriodYear;
+  }
+  Future<void> setMarginalityPeriodYear(String marginalityPeriodYear) async {
+    await pref.setString(_marginalityPeriodYear, marginalityPeriodYear);
   }
 
 

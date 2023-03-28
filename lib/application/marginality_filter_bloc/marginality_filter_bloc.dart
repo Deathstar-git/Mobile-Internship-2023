@@ -14,6 +14,7 @@ enum Currency {ruble, dollar}
 class MarginalityFilterBloc extends Bloc<MarginalityFilterEvent, MarginalityFilterState> {
   SharedPref sharedPref;
   String selectedPeriod = '';
+  String selectedYear = '';
   final List<String> periods = [
     'Месяц',
     'Квартал',
@@ -27,14 +28,16 @@ class MarginalityFilterBloc extends Bloc<MarginalityFilterEvent, MarginalityFilt
     emit(const _Loading());
     Future.delayed(const Duration(milliseconds:100));
     selectedPeriod = sharedPref.getMarginalityPeriodItem();
-    emit(_Loaded(periods, selectedPeriod));
+    selectedYear = sharedPref.getMarginalityPeriodYear();
+    emit(_Loaded(periods, selectedPeriod, selectedYear));
   }
   Future<void> _onValueChanged(
       ValueChanged event,
       Emitter<MarginalityFilterState> emit,
       ) async {
     selectedPeriod = sharedPref.getMarginalityPeriodItem();
-    emit(_ItemSelected(periods, selectedPeriod));
+    selectedYear = sharedPref.getMarginalityPeriodYear();
+    emit(_ItemSelected(periods, selectedPeriod, selectedYear));
   }
 
   MarginalityFilterBloc(this.sharedPref) : super(const _Initial()) {

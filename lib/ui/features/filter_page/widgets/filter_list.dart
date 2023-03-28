@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_internship_1/ui/common/colors.dart';
 import 'package:mobile_internship_1/ui/features/filter_page/widgets/periods_dropdown.dart';
+import 'package:mobile_internship_1/ui/features/filter_page/widgets/table_calendar.dart';
+
 
 
 class FilterList extends StatelessWidget {
   final List<String> periods;
   final String selectedPeriod;
+  final String selectedYear;
   const FilterList({super.key,
     required this.periods,
-    required this.selectedPeriod});
+    required this.selectedPeriod,
+    required this.selectedYear});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +39,7 @@ class FilterList extends StatelessWidget {
                 child: ColoredBox(
                     color: AppColors.black_1,
                     child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+                        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                         child: SizedBox(
                             width: double.infinity,
                             height: 140,
@@ -50,21 +54,16 @@ class FilterList extends StatelessWidget {
                                     )
                                 ),
                                 Padding(
-                                    padding: const EdgeInsets.only(top: 20, bottom: 10, right: 40),
+                                    padding: const EdgeInsets.only(top: 20, bottom: 10, right: 0),
                                     child: Row(
                                       children: [
                                         PeriodsDropdown(periods: periods, selectedPeriod: selectedPeriod),
-                                        const SizedBox(
-                                            width: 120,
-                                            height: 40,
-                                            child: Text(
-                                                'Календарь',
-                                                style: TextStyle(
-                                                    fontSize: 15,
-                                                    color: AppColors.gray_1
-                                                )
-                                            )
-                                            //TODO: Сверстать виджет календаря
+                                        SizedBox(
+                                            width: 220,
+                                            height: 50,
+                                            child: MarginalityTableCalendar(
+                                                selectedPeriod: selectedPeriod,
+                                                selectedYear: selectedYear)
                                         ),
                                       ],
                                     ))

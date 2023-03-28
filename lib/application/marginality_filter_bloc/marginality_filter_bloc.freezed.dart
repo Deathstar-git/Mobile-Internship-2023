@@ -283,9 +283,11 @@ mixin _$MarginalityFilterState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<String> choices, String selectedValue)
+    required TResult Function(
+            List<String> periods, String selectedPeriod, String selectedYear)
         loaded,
-    required TResult Function(List<String> choices, String selectedValue)
+    required TResult Function(
+            List<String> periods, String selectedPeriod, String selectedYear)
         itemSelected,
   }) =>
       throw _privateConstructorUsedError;
@@ -293,16 +295,24 @@ mixin _$MarginalityFilterState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<String> choices, String selectedValue)? loaded,
-    TResult? Function(List<String> choices, String selectedValue)? itemSelected,
+    TResult? Function(
+            List<String> periods, String selectedPeriod, String selectedYear)?
+        loaded,
+    TResult? Function(
+            List<String> periods, String selectedPeriod, String selectedYear)?
+        itemSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<String> choices, String selectedValue)? loaded,
-    TResult Function(List<String> choices, String selectedValue)? itemSelected,
+    TResult Function(
+            List<String> periods, String selectedPeriod, String selectedYear)?
+        loaded,
+    TResult Function(
+            List<String> periods, String selectedPeriod, String selectedYear)?
+        itemSelected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -391,9 +401,11 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<String> choices, String selectedValue)
+    required TResult Function(
+            List<String> periods, String selectedPeriod, String selectedYear)
         loaded,
-    required TResult Function(List<String> choices, String selectedValue)
+    required TResult Function(
+            List<String> periods, String selectedPeriod, String selectedYear)
         itemSelected,
   }) {
     return initial();
@@ -404,8 +416,12 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<String> choices, String selectedValue)? loaded,
-    TResult? Function(List<String> choices, String selectedValue)? itemSelected,
+    TResult? Function(
+            List<String> periods, String selectedPeriod, String selectedYear)?
+        loaded,
+    TResult? Function(
+            List<String> periods, String selectedPeriod, String selectedYear)?
+        itemSelected,
   }) {
     return initial?.call();
   }
@@ -415,8 +431,12 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<String> choices, String selectedValue)? loaded,
-    TResult Function(List<String> choices, String selectedValue)? itemSelected,
+    TResult Function(
+            List<String> periods, String selectedPeriod, String selectedYear)?
+        loaded,
+    TResult Function(
+            List<String> periods, String selectedPeriod, String selectedYear)?
+        itemSelected,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -506,9 +526,11 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<String> choices, String selectedValue)
+    required TResult Function(
+            List<String> periods, String selectedPeriod, String selectedYear)
         loaded,
-    required TResult Function(List<String> choices, String selectedValue)
+    required TResult Function(
+            List<String> periods, String selectedPeriod, String selectedYear)
         itemSelected,
   }) {
     return loading();
@@ -519,8 +541,12 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<String> choices, String selectedValue)? loaded,
-    TResult? Function(List<String> choices, String selectedValue)? itemSelected,
+    TResult? Function(
+            List<String> periods, String selectedPeriod, String selectedYear)?
+        loaded,
+    TResult? Function(
+            List<String> periods, String selectedPeriod, String selectedYear)?
+        itemSelected,
   }) {
     return loading?.call();
   }
@@ -530,8 +556,12 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<String> choices, String selectedValue)? loaded,
-    TResult Function(List<String> choices, String selectedValue)? itemSelected,
+    TResult Function(
+            List<String> periods, String selectedPeriod, String selectedYear)?
+        loaded,
+    TResult Function(
+            List<String> periods, String selectedPeriod, String selectedYear)?
+        itemSelected,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -587,7 +617,7 @@ abstract class _$$_LoadedCopyWith<$Res> {
   factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
       __$$_LoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<String> choices, String selectedValue});
+  $Res call({List<String> periods, String selectedPeriod, String selectedYear});
 }
 
 /// @nodoc
@@ -600,17 +630,22 @@ class __$$_LoadedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? choices = null,
-    Object? selectedValue = null,
+    Object? periods = null,
+    Object? selectedPeriod = null,
+    Object? selectedYear = null,
   }) {
     return _then(_$_Loaded(
-      null == choices
-          ? _value._choices
-          : choices // ignore: cast_nullable_to_non_nullable
+      null == periods
+          ? _value._periods
+          : periods // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      null == selectedValue
-          ? _value.selectedValue
-          : selectedValue // ignore: cast_nullable_to_non_nullable
+      null == selectedPeriod
+          ? _value.selectedPeriod
+          : selectedPeriod // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == selectedYear
+          ? _value.selectedYear
+          : selectedYear // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -619,23 +654,26 @@ class __$$_LoadedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Loaded implements _Loaded {
-  const _$_Loaded(final List<String> choices, this.selectedValue)
-      : _choices = choices;
+  const _$_Loaded(
+      final List<String> periods, this.selectedPeriod, this.selectedYear)
+      : _periods = periods;
 
-  final List<String> _choices;
+  final List<String> _periods;
   @override
-  List<String> get choices {
-    if (_choices is EqualUnmodifiableListView) return _choices;
+  List<String> get periods {
+    if (_periods is EqualUnmodifiableListView) return _periods;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_choices);
+    return EqualUnmodifiableListView(_periods);
   }
 
   @override
-  final String selectedValue;
+  final String selectedPeriod;
+  @override
+  final String selectedYear;
 
   @override
   String toString() {
-    return 'MarginalityFilterState.loaded(choices: $choices, selectedValue: $selectedValue)';
+    return 'MarginalityFilterState.loaded(periods: $periods, selectedPeriod: $selectedPeriod, selectedYear: $selectedYear)';
   }
 
   @override
@@ -643,14 +681,19 @@ class _$_Loaded implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Loaded &&
-            const DeepCollectionEquality().equals(other._choices, _choices) &&
-            (identical(other.selectedValue, selectedValue) ||
-                other.selectedValue == selectedValue));
+            const DeepCollectionEquality().equals(other._periods, _periods) &&
+            (identical(other.selectedPeriod, selectedPeriod) ||
+                other.selectedPeriod == selectedPeriod) &&
+            (identical(other.selectedYear, selectedYear) ||
+                other.selectedYear == selectedYear));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_choices), selectedValue);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_periods),
+      selectedPeriod,
+      selectedYear);
 
   @JsonKey(ignore: true)
   @override
@@ -663,12 +706,14 @@ class _$_Loaded implements _Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<String> choices, String selectedValue)
+    required TResult Function(
+            List<String> periods, String selectedPeriod, String selectedYear)
         loaded,
-    required TResult Function(List<String> choices, String selectedValue)
+    required TResult Function(
+            List<String> periods, String selectedPeriod, String selectedYear)
         itemSelected,
   }) {
-    return loaded(choices, selectedValue);
+    return loaded(periods, selectedPeriod, selectedYear);
   }
 
   @override
@@ -676,10 +721,14 @@ class _$_Loaded implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<String> choices, String selectedValue)? loaded,
-    TResult? Function(List<String> choices, String selectedValue)? itemSelected,
+    TResult? Function(
+            List<String> periods, String selectedPeriod, String selectedYear)?
+        loaded,
+    TResult? Function(
+            List<String> periods, String selectedPeriod, String selectedYear)?
+        itemSelected,
   }) {
-    return loaded?.call(choices, selectedValue);
+    return loaded?.call(periods, selectedPeriod, selectedYear);
   }
 
   @override
@@ -687,12 +736,16 @@ class _$_Loaded implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<String> choices, String selectedValue)? loaded,
-    TResult Function(List<String> choices, String selectedValue)? itemSelected,
+    TResult Function(
+            List<String> periods, String selectedPeriod, String selectedYear)?
+        loaded,
+    TResult Function(
+            List<String> periods, String selectedPeriod, String selectedYear)?
+        itemSelected,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(choices, selectedValue);
+      return loaded(periods, selectedPeriod, selectedYear);
     }
     return orElse();
   }
@@ -736,11 +789,12 @@ class _$_Loaded implements _Loaded {
 }
 
 abstract class _Loaded implements MarginalityFilterState {
-  const factory _Loaded(
-      final List<String> choices, final String selectedValue) = _$_Loaded;
+  const factory _Loaded(final List<String> periods, final String selectedPeriod,
+      final String selectedYear) = _$_Loaded;
 
-  List<String> get choices;
-  String get selectedValue;
+  List<String> get periods;
+  String get selectedPeriod;
+  String get selectedYear;
   @JsonKey(ignore: true)
   _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -752,7 +806,7 @@ abstract class _$$_ItemSelectedCopyWith<$Res> {
           _$_ItemSelected value, $Res Function(_$_ItemSelected) then) =
       __$$_ItemSelectedCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<String> choices, String selectedValue});
+  $Res call({List<String> periods, String selectedPeriod, String selectedYear});
 }
 
 /// @nodoc
@@ -766,17 +820,22 @@ class __$$_ItemSelectedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? choices = null,
-    Object? selectedValue = null,
+    Object? periods = null,
+    Object? selectedPeriod = null,
+    Object? selectedYear = null,
   }) {
     return _then(_$_ItemSelected(
-      null == choices
-          ? _value._choices
-          : choices // ignore: cast_nullable_to_non_nullable
+      null == periods
+          ? _value._periods
+          : periods // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      null == selectedValue
-          ? _value.selectedValue
-          : selectedValue // ignore: cast_nullable_to_non_nullable
+      null == selectedPeriod
+          ? _value.selectedPeriod
+          : selectedPeriod // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == selectedYear
+          ? _value.selectedYear
+          : selectedYear // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -785,23 +844,26 @@ class __$$_ItemSelectedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ItemSelected implements _ItemSelected {
-  const _$_ItemSelected(final List<String> choices, this.selectedValue)
-      : _choices = choices;
+  const _$_ItemSelected(
+      final List<String> periods, this.selectedPeriod, this.selectedYear)
+      : _periods = periods;
 
-  final List<String> _choices;
+  final List<String> _periods;
   @override
-  List<String> get choices {
-    if (_choices is EqualUnmodifiableListView) return _choices;
+  List<String> get periods {
+    if (_periods is EqualUnmodifiableListView) return _periods;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_choices);
+    return EqualUnmodifiableListView(_periods);
   }
 
   @override
-  final String selectedValue;
+  final String selectedPeriod;
+  @override
+  final String selectedYear;
 
   @override
   String toString() {
-    return 'MarginalityFilterState.itemSelected(choices: $choices, selectedValue: $selectedValue)';
+    return 'MarginalityFilterState.itemSelected(periods: $periods, selectedPeriod: $selectedPeriod, selectedYear: $selectedYear)';
   }
 
   @override
@@ -809,14 +871,19 @@ class _$_ItemSelected implements _ItemSelected {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ItemSelected &&
-            const DeepCollectionEquality().equals(other._choices, _choices) &&
-            (identical(other.selectedValue, selectedValue) ||
-                other.selectedValue == selectedValue));
+            const DeepCollectionEquality().equals(other._periods, _periods) &&
+            (identical(other.selectedPeriod, selectedPeriod) ||
+                other.selectedPeriod == selectedPeriod) &&
+            (identical(other.selectedYear, selectedYear) ||
+                other.selectedYear == selectedYear));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_choices), selectedValue);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_periods),
+      selectedPeriod,
+      selectedYear);
 
   @JsonKey(ignore: true)
   @override
@@ -829,12 +896,14 @@ class _$_ItemSelected implements _ItemSelected {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<String> choices, String selectedValue)
+    required TResult Function(
+            List<String> periods, String selectedPeriod, String selectedYear)
         loaded,
-    required TResult Function(List<String> choices, String selectedValue)
+    required TResult Function(
+            List<String> periods, String selectedPeriod, String selectedYear)
         itemSelected,
   }) {
-    return itemSelected(choices, selectedValue);
+    return itemSelected(periods, selectedPeriod, selectedYear);
   }
 
   @override
@@ -842,10 +911,14 @@ class _$_ItemSelected implements _ItemSelected {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<String> choices, String selectedValue)? loaded,
-    TResult? Function(List<String> choices, String selectedValue)? itemSelected,
+    TResult? Function(
+            List<String> periods, String selectedPeriod, String selectedYear)?
+        loaded,
+    TResult? Function(
+            List<String> periods, String selectedPeriod, String selectedYear)?
+        itemSelected,
   }) {
-    return itemSelected?.call(choices, selectedValue);
+    return itemSelected?.call(periods, selectedPeriod, selectedYear);
   }
 
   @override
@@ -853,12 +926,16 @@ class _$_ItemSelected implements _ItemSelected {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<String> choices, String selectedValue)? loaded,
-    TResult Function(List<String> choices, String selectedValue)? itemSelected,
+    TResult Function(
+            List<String> periods, String selectedPeriod, String selectedYear)?
+        loaded,
+    TResult Function(
+            List<String> periods, String selectedPeriod, String selectedYear)?
+        itemSelected,
     required TResult orElse(),
   }) {
     if (itemSelected != null) {
-      return itemSelected(choices, selectedValue);
+      return itemSelected(periods, selectedPeriod, selectedYear);
     }
     return orElse();
   }
@@ -902,11 +979,12 @@ class _$_ItemSelected implements _ItemSelected {
 }
 
 abstract class _ItemSelected implements MarginalityFilterState {
-  const factory _ItemSelected(
-      final List<String> choices, final String selectedValue) = _$_ItemSelected;
+  const factory _ItemSelected(final List<String> periods,
+      final String selectedPeriod, final String selectedYear) = _$_ItemSelected;
 
-  List<String> get choices;
-  String get selectedValue;
+  List<String> get periods;
+  String get selectedPeriod;
+  String get selectedYear;
   @JsonKey(ignore: true)
   _$$_ItemSelectedCopyWith<_$_ItemSelected> get copyWith =>
       throw _privateConstructorUsedError;

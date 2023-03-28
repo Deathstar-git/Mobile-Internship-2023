@@ -5,11 +5,8 @@ import '../features/filter_page/filter_page.dart';
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
-    AutoRoute(page: MainPage,
-        initial: true,
-    children: [
-      AutoRoute(page: FilterPage),
-    ]),
+    AutoRoute(page: MainPage, initial: true,),
+    AutoRoute(page: FilterPage)
   ],
 )
 class $AppRouter {}
