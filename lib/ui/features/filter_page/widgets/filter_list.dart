@@ -9,10 +9,12 @@ class FilterList extends StatelessWidget {
   final List<String> periods;
   final String selectedPeriod;
   final String selectedYear;
+  final String selectedMonth;
   const FilterList({super.key,
     required this.periods,
     required this.selectedPeriod,
-    required this.selectedYear});
+    required this.selectedYear,
+    required this.selectedMonth});
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +65,8 @@ class FilterList extends StatelessWidget {
                                             height: 50,
                                             child: MarginalityTableCalendar(
                                                 selectedPeriod: selectedPeriod,
-                                                selectedYear: selectedYear)
+                                                selectedYear: selectedYear,
+                                              selectedMonth: selectedMonth)
                                         ),
                                       ],
                                     ))

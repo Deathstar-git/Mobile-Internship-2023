@@ -283,11 +283,11 @@ mixin _$MarginalityFilterState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
-            List<String> periods, String selectedPeriod, String selectedYear)
+    required TResult Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)
         loaded,
-    required TResult Function(
-            List<String> periods, String selectedPeriod, String selectedYear)
+    required TResult Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)
         itemSelected,
   }) =>
       throw _privateConstructorUsedError;
@@ -295,11 +295,11 @@ mixin _$MarginalityFilterState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-            List<String> periods, String selectedPeriod, String selectedYear)?
+    TResult? Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)?
         loaded,
-    TResult? Function(
-            List<String> periods, String selectedPeriod, String selectedYear)?
+    TResult? Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)?
         itemSelected,
   }) =>
       throw _privateConstructorUsedError;
@@ -307,11 +307,11 @@ mixin _$MarginalityFilterState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            List<String> periods, String selectedPeriod, String selectedYear)?
+    TResult Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)?
         loaded,
-    TResult Function(
-            List<String> periods, String selectedPeriod, String selectedYear)?
+    TResult Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)?
         itemSelected,
     required TResult orElse(),
   }) =>
@@ -401,11 +401,11 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
-            List<String> periods, String selectedPeriod, String selectedYear)
+    required TResult Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)
         loaded,
-    required TResult Function(
-            List<String> periods, String selectedPeriod, String selectedYear)
+    required TResult Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)
         itemSelected,
   }) {
     return initial();
@@ -416,11 +416,11 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-            List<String> periods, String selectedPeriod, String selectedYear)?
+    TResult? Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)?
         loaded,
-    TResult? Function(
-            List<String> periods, String selectedPeriod, String selectedYear)?
+    TResult? Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)?
         itemSelected,
   }) {
     return initial?.call();
@@ -431,11 +431,11 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            List<String> periods, String selectedPeriod, String selectedYear)?
+    TResult Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)?
         loaded,
-    TResult Function(
-            List<String> periods, String selectedPeriod, String selectedYear)?
+    TResult Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)?
         itemSelected,
     required TResult orElse(),
   }) {
@@ -526,11 +526,11 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
-            List<String> periods, String selectedPeriod, String selectedYear)
+    required TResult Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)
         loaded,
-    required TResult Function(
-            List<String> periods, String selectedPeriod, String selectedYear)
+    required TResult Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)
         itemSelected,
   }) {
     return loading();
@@ -541,11 +541,11 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-            List<String> periods, String selectedPeriod, String selectedYear)?
+    TResult? Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)?
         loaded,
-    TResult? Function(
-            List<String> periods, String selectedPeriod, String selectedYear)?
+    TResult? Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)?
         itemSelected,
   }) {
     return loading?.call();
@@ -556,11 +556,11 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            List<String> periods, String selectedPeriod, String selectedYear)?
+    TResult Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)?
         loaded,
-    TResult Function(
-            List<String> periods, String selectedPeriod, String selectedYear)?
+    TResult Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)?
         itemSelected,
     required TResult orElse(),
   }) {
@@ -617,7 +617,11 @@ abstract class _$$_LoadedCopyWith<$Res> {
   factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
       __$$_LoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<String> periods, String selectedPeriod, String selectedYear});
+  $Res call(
+      {List<String> periods,
+      String selectedPeriod,
+      String selectedYear,
+      String selectedMonth});
 }
 
 /// @nodoc
@@ -633,6 +637,7 @@ class __$$_LoadedCopyWithImpl<$Res>
     Object? periods = null,
     Object? selectedPeriod = null,
     Object? selectedYear = null,
+    Object? selectedMonth = null,
   }) {
     return _then(_$_Loaded(
       null == periods
@@ -647,6 +652,10 @@ class __$$_LoadedCopyWithImpl<$Res>
           ? _value.selectedYear
           : selectedYear // ignore: cast_nullable_to_non_nullable
               as String,
+      null == selectedMonth
+          ? _value.selectedMonth
+          : selectedMonth // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -654,8 +663,8 @@ class __$$_LoadedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Loaded implements _Loaded {
-  const _$_Loaded(
-      final List<String> periods, this.selectedPeriod, this.selectedYear)
+  const _$_Loaded(final List<String> periods, this.selectedPeriod,
+      this.selectedYear, this.selectedMonth)
       : _periods = periods;
 
   final List<String> _periods;
@@ -670,10 +679,12 @@ class _$_Loaded implements _Loaded {
   final String selectedPeriod;
   @override
   final String selectedYear;
+  @override
+  final String selectedMonth;
 
   @override
   String toString() {
-    return 'MarginalityFilterState.loaded(periods: $periods, selectedPeriod: $selectedPeriod, selectedYear: $selectedYear)';
+    return 'MarginalityFilterState.loaded(periods: $periods, selectedPeriod: $selectedPeriod, selectedYear: $selectedYear, selectedMonth: $selectedMonth)';
   }
 
   @override
@@ -685,7 +696,9 @@ class _$_Loaded implements _Loaded {
             (identical(other.selectedPeriod, selectedPeriod) ||
                 other.selectedPeriod == selectedPeriod) &&
             (identical(other.selectedYear, selectedYear) ||
-                other.selectedYear == selectedYear));
+                other.selectedYear == selectedYear) &&
+            (identical(other.selectedMonth, selectedMonth) ||
+                other.selectedMonth == selectedMonth));
   }
 
   @override
@@ -693,7 +706,8 @@ class _$_Loaded implements _Loaded {
       runtimeType,
       const DeepCollectionEquality().hash(_periods),
       selectedPeriod,
-      selectedYear);
+      selectedYear,
+      selectedMonth);
 
   @JsonKey(ignore: true)
   @override
@@ -706,14 +720,14 @@ class _$_Loaded implements _Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
-            List<String> periods, String selectedPeriod, String selectedYear)
+    required TResult Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)
         loaded,
-    required TResult Function(
-            List<String> periods, String selectedPeriod, String selectedYear)
+    required TResult Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)
         itemSelected,
   }) {
-    return loaded(periods, selectedPeriod, selectedYear);
+    return loaded(periods, selectedPeriod, selectedYear, selectedMonth);
   }
 
   @override
@@ -721,14 +735,14 @@ class _$_Loaded implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-            List<String> periods, String selectedPeriod, String selectedYear)?
+    TResult? Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)?
         loaded,
-    TResult? Function(
-            List<String> periods, String selectedPeriod, String selectedYear)?
+    TResult? Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)?
         itemSelected,
   }) {
-    return loaded?.call(periods, selectedPeriod, selectedYear);
+    return loaded?.call(periods, selectedPeriod, selectedYear, selectedMonth);
   }
 
   @override
@@ -736,16 +750,16 @@ class _$_Loaded implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            List<String> periods, String selectedPeriod, String selectedYear)?
+    TResult Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)?
         loaded,
-    TResult Function(
-            List<String> periods, String selectedPeriod, String selectedYear)?
+    TResult Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)?
         itemSelected,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(periods, selectedPeriod, selectedYear);
+      return loaded(periods, selectedPeriod, selectedYear, selectedMonth);
     }
     return orElse();
   }
@@ -790,11 +804,12 @@ class _$_Loaded implements _Loaded {
 
 abstract class _Loaded implements MarginalityFilterState {
   const factory _Loaded(final List<String> periods, final String selectedPeriod,
-      final String selectedYear) = _$_Loaded;
+      final String selectedYear, final String selectedMonth) = _$_Loaded;
 
   List<String> get periods;
   String get selectedPeriod;
   String get selectedYear;
+  String get selectedMonth;
   @JsonKey(ignore: true)
   _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -806,7 +821,11 @@ abstract class _$$_ItemSelectedCopyWith<$Res> {
           _$_ItemSelected value, $Res Function(_$_ItemSelected) then) =
       __$$_ItemSelectedCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<String> periods, String selectedPeriod, String selectedYear});
+  $Res call(
+      {List<String> periods,
+      String selectedPeriod,
+      String selectedYear,
+      String selectedMonth});
 }
 
 /// @nodoc
@@ -823,6 +842,7 @@ class __$$_ItemSelectedCopyWithImpl<$Res>
     Object? periods = null,
     Object? selectedPeriod = null,
     Object? selectedYear = null,
+    Object? selectedMonth = null,
   }) {
     return _then(_$_ItemSelected(
       null == periods
@@ -837,6 +857,10 @@ class __$$_ItemSelectedCopyWithImpl<$Res>
           ? _value.selectedYear
           : selectedYear // ignore: cast_nullable_to_non_nullable
               as String,
+      null == selectedMonth
+          ? _value.selectedMonth
+          : selectedMonth // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -844,8 +868,8 @@ class __$$_ItemSelectedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ItemSelected implements _ItemSelected {
-  const _$_ItemSelected(
-      final List<String> periods, this.selectedPeriod, this.selectedYear)
+  const _$_ItemSelected(final List<String> periods, this.selectedPeriod,
+      this.selectedYear, this.selectedMonth)
       : _periods = periods;
 
   final List<String> _periods;
@@ -860,10 +884,12 @@ class _$_ItemSelected implements _ItemSelected {
   final String selectedPeriod;
   @override
   final String selectedYear;
+  @override
+  final String selectedMonth;
 
   @override
   String toString() {
-    return 'MarginalityFilterState.itemSelected(periods: $periods, selectedPeriod: $selectedPeriod, selectedYear: $selectedYear)';
+    return 'MarginalityFilterState.itemSelected(periods: $periods, selectedPeriod: $selectedPeriod, selectedYear: $selectedYear, selectedMonth: $selectedMonth)';
   }
 
   @override
@@ -875,7 +901,9 @@ class _$_ItemSelected implements _ItemSelected {
             (identical(other.selectedPeriod, selectedPeriod) ||
                 other.selectedPeriod == selectedPeriod) &&
             (identical(other.selectedYear, selectedYear) ||
-                other.selectedYear == selectedYear));
+                other.selectedYear == selectedYear) &&
+            (identical(other.selectedMonth, selectedMonth) ||
+                other.selectedMonth == selectedMonth));
   }
 
   @override
@@ -883,7 +911,8 @@ class _$_ItemSelected implements _ItemSelected {
       runtimeType,
       const DeepCollectionEquality().hash(_periods),
       selectedPeriod,
-      selectedYear);
+      selectedYear,
+      selectedMonth);
 
   @JsonKey(ignore: true)
   @override
@@ -896,14 +925,14 @@ class _$_ItemSelected implements _ItemSelected {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
-            List<String> periods, String selectedPeriod, String selectedYear)
+    required TResult Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)
         loaded,
-    required TResult Function(
-            List<String> periods, String selectedPeriod, String selectedYear)
+    required TResult Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)
         itemSelected,
   }) {
-    return itemSelected(periods, selectedPeriod, selectedYear);
+    return itemSelected(periods, selectedPeriod, selectedYear, selectedMonth);
   }
 
   @override
@@ -911,14 +940,15 @@ class _$_ItemSelected implements _ItemSelected {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-            List<String> periods, String selectedPeriod, String selectedYear)?
+    TResult? Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)?
         loaded,
-    TResult? Function(
-            List<String> periods, String selectedPeriod, String selectedYear)?
+    TResult? Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)?
         itemSelected,
   }) {
-    return itemSelected?.call(periods, selectedPeriod, selectedYear);
+    return itemSelected?.call(
+        periods, selectedPeriod, selectedYear, selectedMonth);
   }
 
   @override
@@ -926,16 +956,16 @@ class _$_ItemSelected implements _ItemSelected {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            List<String> periods, String selectedPeriod, String selectedYear)?
+    TResult Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)?
         loaded,
-    TResult Function(
-            List<String> periods, String selectedPeriod, String selectedYear)?
+    TResult Function(List<String> periods, String selectedPeriod,
+            String selectedYear, String selectedMonth)?
         itemSelected,
     required TResult orElse(),
   }) {
     if (itemSelected != null) {
-      return itemSelected(periods, selectedPeriod, selectedYear);
+      return itemSelected(periods, selectedPeriod, selectedYear, selectedMonth);
     }
     return orElse();
   }
@@ -979,12 +1009,16 @@ class _$_ItemSelected implements _ItemSelected {
 }
 
 abstract class _ItemSelected implements MarginalityFilterState {
-  const factory _ItemSelected(final List<String> periods,
-      final String selectedPeriod, final String selectedYear) = _$_ItemSelected;
+  const factory _ItemSelected(
+      final List<String> periods,
+      final String selectedPeriod,
+      final String selectedYear,
+      final String selectedMonth) = _$_ItemSelected;
 
   List<String> get periods;
   String get selectedPeriod;
   String get selectedYear;
+  String get selectedMonth;
   @JsonKey(ignore: true)
   _$$_ItemSelectedCopyWith<_$_ItemSelected> get copyWith =>
       throw _privateConstructorUsedError;
