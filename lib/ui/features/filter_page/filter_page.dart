@@ -32,17 +32,19 @@ class FilterPage extends StatelessWidget {
                   loading: () {
                     return const BottomLoader();
                   },
-                  loaded: (periods, selectedPeriod, selectedYear, selectedMonth) {
+                  loaded: (periods, selectedPeriod, selectedYear, selectedMonth, selectedCurrency) {
                     return FilterList(periods: periods,
                         selectedPeriod:  selectedPeriod,
                         selectedYear: selectedYear,
-                        selectedMonth: selectedMonth);
+                        selectedMonth: selectedMonth,
+                        selectedCurrency: selectedCurrency);
                   },
-                  itemSelected: (periods, selectedPeriod, selectedYear, selectedMonth) {
+                  itemSelected: (periods, selectedPeriod, selectedYear, selectedMonth, selectedCurrency) {
                     return FilterList(periods: periods,
                         selectedPeriod:  selectedPeriod,
                         selectedYear: selectedYear,
-                        selectedMonth: selectedMonth);
+                        selectedMonth: selectedMonth,
+                        selectedCurrency: selectedCurrency);
                   }
               )
           );

@@ -9,6 +9,8 @@ class SharedPref {
   final String _marginalityPeriodItem = 'Период';
   final String _marginalityPeriodItemDefault = 'Квартал';
   final String _marginalityPeriodYear = 'Год';
+  final String _marginalityCurrency = 'Валюта';
+  final String _marginalityCurrencyDefault = 'rub';
   final String _marginalityPeriodYearDefault =  '${DateFormat('dd/MM/yyyy').
   format(DateTime.now())} - ${DateFormat('dd/MM/yyyy')
       .format(DateTime.now())}';
@@ -24,6 +26,12 @@ class SharedPref {
   }
   Future<void> setMarginalityChoice(String marginalityChoiceItem) async {
     await pref.setString(_marginalityChoiceItem, marginalityChoiceItem);
+  }
+  String getMarginalityCurrency(){
+    return pref.getString(_marginalityCurrency) ?? _marginalityCurrencyDefault;
+  }
+  Future<void> setMarginalityCurrency(String marginalityCurrencyItem) async {
+    await pref.setString(_marginalityCurrency, marginalityCurrencyItem);
   }
   String getMarginalityPeriodItem(){
     return pref.getString(_marginalityPeriodItem) ?? _marginalityPeriodItemDefault;

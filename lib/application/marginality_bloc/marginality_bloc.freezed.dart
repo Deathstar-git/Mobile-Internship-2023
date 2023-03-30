@@ -282,16 +282,16 @@ mixin _$MarginalityState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityProjects> data)
         projectsloaded,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityEmployees> data)
         employeesloaded,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityDepartments> data)
         departmentsloaded,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityCompanies> data)
         companiesloaded,
   }) =>
@@ -300,17 +300,17 @@ mixin _$MarginalityState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityProjects> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityProjects> data)?
         projectsloaded,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityEmployees> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityEmployees> data)?
         employeesloaded,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityDepartments> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityDepartments> data)?
         departmentsloaded,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityCompanies> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityCompanies> data)?
         companiesloaded,
   }) =>
       throw _privateConstructorUsedError;
@@ -318,17 +318,17 @@ mixin _$MarginalityState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            String selectedMarginality, List<MarginalityProjects> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityProjects> data)?
         projectsloaded,
-    TResult Function(
-            String selectedMarginality, List<MarginalityEmployees> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityEmployees> data)?
         employeesloaded,
-    TResult Function(
-            String selectedMarginality, List<MarginalityDepartments> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityDepartments> data)?
         departmentsloaded,
-    TResult Function(
-            String selectedMarginality, List<MarginalityCompanies> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityCompanies> data)?
         companiesloaded,
     required TResult orElse(),
   }) =>
@@ -423,16 +423,16 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityProjects> data)
         projectsloaded,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityEmployees> data)
         employeesloaded,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityDepartments> data)
         departmentsloaded,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityCompanies> data)
         companiesloaded,
   }) {
@@ -444,17 +444,17 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityProjects> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityProjects> data)?
         projectsloaded,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityEmployees> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityEmployees> data)?
         employeesloaded,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityDepartments> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityDepartments> data)?
         departmentsloaded,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityCompanies> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityCompanies> data)?
         companiesloaded,
   }) {
     return initial?.call();
@@ -465,17 +465,17 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            String selectedMarginality, List<MarginalityProjects> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityProjects> data)?
         projectsloaded,
-    TResult Function(
-            String selectedMarginality, List<MarginalityEmployees> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityEmployees> data)?
         employeesloaded,
-    TResult Function(
-            String selectedMarginality, List<MarginalityDepartments> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityDepartments> data)?
         departmentsloaded,
-    TResult Function(
-            String selectedMarginality, List<MarginalityCompanies> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityCompanies> data)?
         companiesloaded,
     required TResult orElse(),
   }) {
@@ -572,16 +572,16 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityProjects> data)
         projectsloaded,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityEmployees> data)
         employeesloaded,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityDepartments> data)
         departmentsloaded,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityCompanies> data)
         companiesloaded,
   }) {
@@ -593,17 +593,17 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityProjects> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityProjects> data)?
         projectsloaded,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityEmployees> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityEmployees> data)?
         employeesloaded,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityDepartments> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityDepartments> data)?
         departmentsloaded,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityCompanies> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityCompanies> data)?
         companiesloaded,
   }) {
     return loading?.call();
@@ -614,17 +614,17 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            String selectedMarginality, List<MarginalityProjects> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityProjects> data)?
         projectsloaded,
-    TResult Function(
-            String selectedMarginality, List<MarginalityEmployees> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityEmployees> data)?
         employeesloaded,
-    TResult Function(
-            String selectedMarginality, List<MarginalityDepartments> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityDepartments> data)?
         departmentsloaded,
-    TResult Function(
-            String selectedMarginality, List<MarginalityCompanies> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityCompanies> data)?
         companiesloaded,
     required TResult orElse(),
   }) {
@@ -688,7 +688,10 @@ abstract class _$$_ProjectsLoadedCopyWith<$Res> {
           _$_ProjectsLoaded value, $Res Function(_$_ProjectsLoaded) then) =
       __$$_ProjectsLoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({String selectedMarginality, List<MarginalityProjects> data});
+  $Res call(
+      {String selectedCurrency,
+      String selectedMarginality,
+      List<MarginalityProjects> data});
 }
 
 /// @nodoc
@@ -702,10 +705,15 @@ class __$$_ProjectsLoadedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? selectedCurrency = null,
     Object? selectedMarginality = null,
     Object? data = null,
   }) {
     return _then(_$_ProjectsLoaded(
+      null == selectedCurrency
+          ? _value.selectedCurrency
+          : selectedCurrency // ignore: cast_nullable_to_non_nullable
+              as String,
       null == selectedMarginality
           ? _value.selectedMarginality
           : selectedMarginality // ignore: cast_nullable_to_non_nullable
@@ -721,10 +729,12 @@ class __$$_ProjectsLoadedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ProjectsLoaded implements _ProjectsLoaded {
-  const _$_ProjectsLoaded(
-      this.selectedMarginality, final List<MarginalityProjects> data)
+  const _$_ProjectsLoaded(this.selectedCurrency, this.selectedMarginality,
+      final List<MarginalityProjects> data)
       : _data = data;
 
+  @override
+  final String selectedCurrency;
   @override
   final String selectedMarginality;
   final List<MarginalityProjects> _data;
@@ -737,7 +747,7 @@ class _$_ProjectsLoaded implements _ProjectsLoaded {
 
   @override
   String toString() {
-    return 'MarginalityState.projectsloaded(selectedMarginality: $selectedMarginality, data: $data)';
+    return 'MarginalityState.projectsloaded(selectedCurrency: $selectedCurrency, selectedMarginality: $selectedMarginality, data: $data)';
   }
 
   @override
@@ -745,14 +755,16 @@ class _$_ProjectsLoaded implements _ProjectsLoaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ProjectsLoaded &&
+            (identical(other.selectedCurrency, selectedCurrency) ||
+                other.selectedCurrency == selectedCurrency) &&
             (identical(other.selectedMarginality, selectedMarginality) ||
                 other.selectedMarginality == selectedMarginality) &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selectedMarginality,
-      const DeepCollectionEquality().hash(_data));
+  int get hashCode => Object.hash(runtimeType, selectedCurrency,
+      selectedMarginality, const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
@@ -765,20 +777,20 @@ class _$_ProjectsLoaded implements _ProjectsLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityProjects> data)
         projectsloaded,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityEmployees> data)
         employeesloaded,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityDepartments> data)
         departmentsloaded,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityCompanies> data)
         companiesloaded,
   }) {
-    return projectsloaded(selectedMarginality, data);
+    return projectsloaded(selectedCurrency, selectedMarginality, data);
   }
 
   @override
@@ -786,20 +798,20 @@ class _$_ProjectsLoaded implements _ProjectsLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityProjects> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityProjects> data)?
         projectsloaded,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityEmployees> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityEmployees> data)?
         employeesloaded,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityDepartments> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityDepartments> data)?
         departmentsloaded,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityCompanies> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityCompanies> data)?
         companiesloaded,
   }) {
-    return projectsloaded?.call(selectedMarginality, data);
+    return projectsloaded?.call(selectedCurrency, selectedMarginality, data);
   }
 
   @override
@@ -807,22 +819,22 @@ class _$_ProjectsLoaded implements _ProjectsLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            String selectedMarginality, List<MarginalityProjects> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityProjects> data)?
         projectsloaded,
-    TResult Function(
-            String selectedMarginality, List<MarginalityEmployees> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityEmployees> data)?
         employeesloaded,
-    TResult Function(
-            String selectedMarginality, List<MarginalityDepartments> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityDepartments> data)?
         departmentsloaded,
-    TResult Function(
-            String selectedMarginality, List<MarginalityCompanies> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityCompanies> data)?
         companiesloaded,
     required TResult orElse(),
   }) {
     if (projectsloaded != null) {
-      return projectsloaded(selectedMarginality, data);
+      return projectsloaded(selectedCurrency, selectedMarginality, data);
     }
     return orElse();
   }
@@ -872,9 +884,12 @@ class _$_ProjectsLoaded implements _ProjectsLoaded {
 }
 
 abstract class _ProjectsLoaded implements MarginalityState {
-  const factory _ProjectsLoaded(final String selectedMarginality,
+  const factory _ProjectsLoaded(
+      final String selectedCurrency,
+      final String selectedMarginality,
       final List<MarginalityProjects> data) = _$_ProjectsLoaded;
 
+  String get selectedCurrency;
   String get selectedMarginality;
   List<MarginalityProjects> get data;
   @JsonKey(ignore: true)
@@ -888,7 +903,10 @@ abstract class _$$_EmployeesLoadedCopyWith<$Res> {
           _$_EmployeesLoaded value, $Res Function(_$_EmployeesLoaded) then) =
       __$$_EmployeesLoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({String selectedMarginality, List<MarginalityEmployees> data});
+  $Res call(
+      {String selectedCurrency,
+      String selectedMarginality,
+      List<MarginalityEmployees> data});
 }
 
 /// @nodoc
@@ -902,10 +920,15 @@ class __$$_EmployeesLoadedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? selectedCurrency = null,
     Object? selectedMarginality = null,
     Object? data = null,
   }) {
     return _then(_$_EmployeesLoaded(
+      null == selectedCurrency
+          ? _value.selectedCurrency
+          : selectedCurrency // ignore: cast_nullable_to_non_nullable
+              as String,
       null == selectedMarginality
           ? _value.selectedMarginality
           : selectedMarginality // ignore: cast_nullable_to_non_nullable
@@ -921,10 +944,12 @@ class __$$_EmployeesLoadedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_EmployeesLoaded implements _EmployeesLoaded {
-  const _$_EmployeesLoaded(
-      this.selectedMarginality, final List<MarginalityEmployees> data)
+  const _$_EmployeesLoaded(this.selectedCurrency, this.selectedMarginality,
+      final List<MarginalityEmployees> data)
       : _data = data;
 
+  @override
+  final String selectedCurrency;
   @override
   final String selectedMarginality;
   final List<MarginalityEmployees> _data;
@@ -937,7 +962,7 @@ class _$_EmployeesLoaded implements _EmployeesLoaded {
 
   @override
   String toString() {
-    return 'MarginalityState.employeesloaded(selectedMarginality: $selectedMarginality, data: $data)';
+    return 'MarginalityState.employeesloaded(selectedCurrency: $selectedCurrency, selectedMarginality: $selectedMarginality, data: $data)';
   }
 
   @override
@@ -945,14 +970,16 @@ class _$_EmployeesLoaded implements _EmployeesLoaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_EmployeesLoaded &&
+            (identical(other.selectedCurrency, selectedCurrency) ||
+                other.selectedCurrency == selectedCurrency) &&
             (identical(other.selectedMarginality, selectedMarginality) ||
                 other.selectedMarginality == selectedMarginality) &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selectedMarginality,
-      const DeepCollectionEquality().hash(_data));
+  int get hashCode => Object.hash(runtimeType, selectedCurrency,
+      selectedMarginality, const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
@@ -965,20 +992,20 @@ class _$_EmployeesLoaded implements _EmployeesLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityProjects> data)
         projectsloaded,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityEmployees> data)
         employeesloaded,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityDepartments> data)
         departmentsloaded,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityCompanies> data)
         companiesloaded,
   }) {
-    return employeesloaded(selectedMarginality, data);
+    return employeesloaded(selectedCurrency, selectedMarginality, data);
   }
 
   @override
@@ -986,20 +1013,20 @@ class _$_EmployeesLoaded implements _EmployeesLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityProjects> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityProjects> data)?
         projectsloaded,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityEmployees> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityEmployees> data)?
         employeesloaded,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityDepartments> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityDepartments> data)?
         departmentsloaded,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityCompanies> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityCompanies> data)?
         companiesloaded,
   }) {
-    return employeesloaded?.call(selectedMarginality, data);
+    return employeesloaded?.call(selectedCurrency, selectedMarginality, data);
   }
 
   @override
@@ -1007,22 +1034,22 @@ class _$_EmployeesLoaded implements _EmployeesLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            String selectedMarginality, List<MarginalityProjects> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityProjects> data)?
         projectsloaded,
-    TResult Function(
-            String selectedMarginality, List<MarginalityEmployees> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityEmployees> data)?
         employeesloaded,
-    TResult Function(
-            String selectedMarginality, List<MarginalityDepartments> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityDepartments> data)?
         departmentsloaded,
-    TResult Function(
-            String selectedMarginality, List<MarginalityCompanies> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityCompanies> data)?
         companiesloaded,
     required TResult orElse(),
   }) {
     if (employeesloaded != null) {
-      return employeesloaded(selectedMarginality, data);
+      return employeesloaded(selectedCurrency, selectedMarginality, data);
     }
     return orElse();
   }
@@ -1072,9 +1099,12 @@ class _$_EmployeesLoaded implements _EmployeesLoaded {
 }
 
 abstract class _EmployeesLoaded implements MarginalityState {
-  const factory _EmployeesLoaded(final String selectedMarginality,
+  const factory _EmployeesLoaded(
+      final String selectedCurrency,
+      final String selectedMarginality,
       final List<MarginalityEmployees> data) = _$_EmployeesLoaded;
 
+  String get selectedCurrency;
   String get selectedMarginality;
   List<MarginalityEmployees> get data;
   @JsonKey(ignore: true)
@@ -1088,7 +1118,10 @@ abstract class _$$_DepartmentsLoadedCopyWith<$Res> {
           $Res Function(_$_DepartmentsLoaded) then) =
       __$$_DepartmentsLoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({String selectedMarginality, List<MarginalityDepartments> data});
+  $Res call(
+      {String selectedCurrency,
+      String selectedMarginality,
+      List<MarginalityDepartments> data});
 }
 
 /// @nodoc
@@ -1102,10 +1135,15 @@ class __$$_DepartmentsLoadedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? selectedCurrency = null,
     Object? selectedMarginality = null,
     Object? data = null,
   }) {
     return _then(_$_DepartmentsLoaded(
+      null == selectedCurrency
+          ? _value.selectedCurrency
+          : selectedCurrency // ignore: cast_nullable_to_non_nullable
+              as String,
       null == selectedMarginality
           ? _value.selectedMarginality
           : selectedMarginality // ignore: cast_nullable_to_non_nullable
@@ -1121,10 +1159,12 @@ class __$$_DepartmentsLoadedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_DepartmentsLoaded implements _DepartmentsLoaded {
-  const _$_DepartmentsLoaded(
-      this.selectedMarginality, final List<MarginalityDepartments> data)
+  const _$_DepartmentsLoaded(this.selectedCurrency, this.selectedMarginality,
+      final List<MarginalityDepartments> data)
       : _data = data;
 
+  @override
+  final String selectedCurrency;
   @override
   final String selectedMarginality;
   final List<MarginalityDepartments> _data;
@@ -1137,7 +1177,7 @@ class _$_DepartmentsLoaded implements _DepartmentsLoaded {
 
   @override
   String toString() {
-    return 'MarginalityState.departmentsloaded(selectedMarginality: $selectedMarginality, data: $data)';
+    return 'MarginalityState.departmentsloaded(selectedCurrency: $selectedCurrency, selectedMarginality: $selectedMarginality, data: $data)';
   }
 
   @override
@@ -1145,14 +1185,16 @@ class _$_DepartmentsLoaded implements _DepartmentsLoaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_DepartmentsLoaded &&
+            (identical(other.selectedCurrency, selectedCurrency) ||
+                other.selectedCurrency == selectedCurrency) &&
             (identical(other.selectedMarginality, selectedMarginality) ||
                 other.selectedMarginality == selectedMarginality) &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selectedMarginality,
-      const DeepCollectionEquality().hash(_data));
+  int get hashCode => Object.hash(runtimeType, selectedCurrency,
+      selectedMarginality, const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
@@ -1166,20 +1208,20 @@ class _$_DepartmentsLoaded implements _DepartmentsLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityProjects> data)
         projectsloaded,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityEmployees> data)
         employeesloaded,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityDepartments> data)
         departmentsloaded,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityCompanies> data)
         companiesloaded,
   }) {
-    return departmentsloaded(selectedMarginality, data);
+    return departmentsloaded(selectedCurrency, selectedMarginality, data);
   }
 
   @override
@@ -1187,20 +1229,20 @@ class _$_DepartmentsLoaded implements _DepartmentsLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityProjects> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityProjects> data)?
         projectsloaded,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityEmployees> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityEmployees> data)?
         employeesloaded,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityDepartments> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityDepartments> data)?
         departmentsloaded,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityCompanies> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityCompanies> data)?
         companiesloaded,
   }) {
-    return departmentsloaded?.call(selectedMarginality, data);
+    return departmentsloaded?.call(selectedCurrency, selectedMarginality, data);
   }
 
   @override
@@ -1208,22 +1250,22 @@ class _$_DepartmentsLoaded implements _DepartmentsLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            String selectedMarginality, List<MarginalityProjects> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityProjects> data)?
         projectsloaded,
-    TResult Function(
-            String selectedMarginality, List<MarginalityEmployees> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityEmployees> data)?
         employeesloaded,
-    TResult Function(
-            String selectedMarginality, List<MarginalityDepartments> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityDepartments> data)?
         departmentsloaded,
-    TResult Function(
-            String selectedMarginality, List<MarginalityCompanies> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityCompanies> data)?
         companiesloaded,
     required TResult orElse(),
   }) {
     if (departmentsloaded != null) {
-      return departmentsloaded(selectedMarginality, data);
+      return departmentsloaded(selectedCurrency, selectedMarginality, data);
     }
     return orElse();
   }
@@ -1273,9 +1315,12 @@ class _$_DepartmentsLoaded implements _DepartmentsLoaded {
 }
 
 abstract class _DepartmentsLoaded implements MarginalityState {
-  const factory _DepartmentsLoaded(final String selectedMarginality,
+  const factory _DepartmentsLoaded(
+      final String selectedCurrency,
+      final String selectedMarginality,
       final List<MarginalityDepartments> data) = _$_DepartmentsLoaded;
 
+  String get selectedCurrency;
   String get selectedMarginality;
   List<MarginalityDepartments> get data;
   @JsonKey(ignore: true)
@@ -1289,7 +1334,10 @@ abstract class _$$_CompaniesLoadedCopyWith<$Res> {
           _$_CompaniesLoaded value, $Res Function(_$_CompaniesLoaded) then) =
       __$$_CompaniesLoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({String selectedMarginality, List<MarginalityCompanies> data});
+  $Res call(
+      {String selectedCurrency,
+      String selectedMarginality,
+      List<MarginalityCompanies> data});
 }
 
 /// @nodoc
@@ -1303,10 +1351,15 @@ class __$$_CompaniesLoadedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? selectedCurrency = null,
     Object? selectedMarginality = null,
     Object? data = null,
   }) {
     return _then(_$_CompaniesLoaded(
+      null == selectedCurrency
+          ? _value.selectedCurrency
+          : selectedCurrency // ignore: cast_nullable_to_non_nullable
+              as String,
       null == selectedMarginality
           ? _value.selectedMarginality
           : selectedMarginality // ignore: cast_nullable_to_non_nullable
@@ -1322,10 +1375,12 @@ class __$$_CompaniesLoadedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_CompaniesLoaded implements _CompaniesLoaded {
-  const _$_CompaniesLoaded(
-      this.selectedMarginality, final List<MarginalityCompanies> data)
+  const _$_CompaniesLoaded(this.selectedCurrency, this.selectedMarginality,
+      final List<MarginalityCompanies> data)
       : _data = data;
 
+  @override
+  final String selectedCurrency;
   @override
   final String selectedMarginality;
   final List<MarginalityCompanies> _data;
@@ -1338,7 +1393,7 @@ class _$_CompaniesLoaded implements _CompaniesLoaded {
 
   @override
   String toString() {
-    return 'MarginalityState.companiesloaded(selectedMarginality: $selectedMarginality, data: $data)';
+    return 'MarginalityState.companiesloaded(selectedCurrency: $selectedCurrency, selectedMarginality: $selectedMarginality, data: $data)';
   }
 
   @override
@@ -1346,14 +1401,16 @@ class _$_CompaniesLoaded implements _CompaniesLoaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_CompaniesLoaded &&
+            (identical(other.selectedCurrency, selectedCurrency) ||
+                other.selectedCurrency == selectedCurrency) &&
             (identical(other.selectedMarginality, selectedMarginality) ||
                 other.selectedMarginality == selectedMarginality) &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selectedMarginality,
-      const DeepCollectionEquality().hash(_data));
+  int get hashCode => Object.hash(runtimeType, selectedCurrency,
+      selectedMarginality, const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
@@ -1366,20 +1423,20 @@ class _$_CompaniesLoaded implements _CompaniesLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityProjects> data)
         projectsloaded,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityEmployees> data)
         employeesloaded,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityDepartments> data)
         departmentsloaded,
-    required TResult Function(
+    required TResult Function(String selectedCurrency,
             String selectedMarginality, List<MarginalityCompanies> data)
         companiesloaded,
   }) {
-    return companiesloaded(selectedMarginality, data);
+    return companiesloaded(selectedCurrency, selectedMarginality, data);
   }
 
   @override
@@ -1387,20 +1444,20 @@ class _$_CompaniesLoaded implements _CompaniesLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityProjects> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityProjects> data)?
         projectsloaded,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityEmployees> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityEmployees> data)?
         employeesloaded,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityDepartments> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityDepartments> data)?
         departmentsloaded,
-    TResult? Function(
-            String selectedMarginality, List<MarginalityCompanies> data)?
+    TResult? Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityCompanies> data)?
         companiesloaded,
   }) {
-    return companiesloaded?.call(selectedMarginality, data);
+    return companiesloaded?.call(selectedCurrency, selectedMarginality, data);
   }
 
   @override
@@ -1408,22 +1465,22 @@ class _$_CompaniesLoaded implements _CompaniesLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            String selectedMarginality, List<MarginalityProjects> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityProjects> data)?
         projectsloaded,
-    TResult Function(
-            String selectedMarginality, List<MarginalityEmployees> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityEmployees> data)?
         employeesloaded,
-    TResult Function(
-            String selectedMarginality, List<MarginalityDepartments> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityDepartments> data)?
         departmentsloaded,
-    TResult Function(
-            String selectedMarginality, List<MarginalityCompanies> data)?
+    TResult Function(String selectedCurrency, String selectedMarginality,
+            List<MarginalityCompanies> data)?
         companiesloaded,
     required TResult orElse(),
   }) {
     if (companiesloaded != null) {
-      return companiesloaded(selectedMarginality, data);
+      return companiesloaded(selectedCurrency, selectedMarginality, data);
     }
     return orElse();
   }
@@ -1473,9 +1530,12 @@ class _$_CompaniesLoaded implements _CompaniesLoaded {
 }
 
 abstract class _CompaniesLoaded implements MarginalityState {
-  const factory _CompaniesLoaded(final String selectedMarginality,
+  const factory _CompaniesLoaded(
+      final String selectedCurrency,
+      final String selectedMarginality,
       final List<MarginalityCompanies> data) = _$_CompaniesLoaded;
 
+  String get selectedCurrency;
   String get selectedMarginality;
   List<MarginalityCompanies> get data;
   @JsonKey(ignore: true)

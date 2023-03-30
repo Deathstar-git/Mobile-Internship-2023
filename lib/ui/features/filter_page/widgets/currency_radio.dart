@@ -1,14 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_internship_1/ui/common/colors.dart';
+
+import '../../../../application/marginality_bloc/marginality_bloc.dart';
+import '../../../../application/marginality_filter_bloc/marginality_filter_bloc.dart';
 
 enum Currency {ruble, dollar}
 // Radio button для валют
-class CurrencyRadio extends StatelessWidget {
+class CurrencyRadio extends StatefulWidget {
   final Currency selectedCurrency;
+  const CurrencyRadio(
+      {super.key,
+        required this.selectedCurrency});
 
-  const CurrencyRadio({super.key,
-    required this.selectedCurrency});
+  @override
+  State<CurrencyRadio> createState() => _CurrencyRadioState();
+}
 
+class _CurrencyRadioState extends State<CurrencyRadio> {
+  Currency? _currency = Currency.ruble;
+
+  @override
+  initState() {
+    super.initState();
+    _currency = widget.selectedCurrency;
+  }
   @override
   Widget build(BuildContext context) {
     return  ColoredBox(
@@ -47,9 +63,17 @@ class CurrencyRadio extends StatelessWidget {
                             hoverColor: AppColors.green_3,
                             focusColor: AppColors.green_3,
                             value: Currency.ruble,
-                            groupValue: selectedCurrency,
+                            groupValue: _currency,
                             onChanged: (Currency? value) {
-
+                              setState(() {
+                                _currency = value;
+                              });
+                              context.read<MarginalityFilterBloc>().
+                              sharedPref.setMarginalityCurrency('rub');
+                              context.read<MarginalityFilterBloc>().
+                              add(const MarginalityFilterEvent.valueChanged());
+                              context.read<MarginalityBloc>().
+                              add(const MarginalityEvent.newFilterSelected());
                             },
                           ),
                         ),
@@ -67,9 +91,17 @@ class CurrencyRadio extends StatelessWidget {
                             hoverColor: AppColors.green_3,
                             focusColor: AppColors.green_3,
                             value: Currency.dollar,
-                            groupValue: selectedCurrency,
+                            groupValue: _currency,
                             onChanged: (Currency? value) {
-
+                              setState(() {
+                                _currency = value;
+                              });
+                              context.read<MarginalityFilterBloc>().
+                              sharedPref.setMarginalityCurrency('usd');
+                              context.read<MarginalityFilterBloc>().
+                              add(const MarginalityFilterEvent.valueChanged());
+                              context.read<MarginalityBloc>().
+                              add(const MarginalityEvent.newFilterSelected());
                             },
                           ),
                         ),

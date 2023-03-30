@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_internship_1/application/marginality_bloc/marginality_bloc.dart';
+import 'package:mobile_internship_1/ui/features/main_page/widgets/datatables/marginality_companies_datatable.dart';
+import 'package:mobile_internship_1/ui/features/main_page/widgets/datatables/marginality_departments_datatable.dart';
 import 'package:mobile_internship_1/ui/features/main_page/widgets/datatables/marginality_employees_datatable.dart';
+import 'package:mobile_internship_1/ui/features/main_page/widgets/datatables/marginality_projects_datatable.dart';
 
 import '../../../widgets/bottom_loader.dart';
 
@@ -31,14 +34,22 @@ class _MarginalityListState extends State<MarginalityList> {
             loading: () {
               return const BottomLoader();
             },
-            companiesloaded: (selectedMarginality, data) {
-              return const Text('Компании');
-            }, projectsloaded: (selectedMarginality, data) {
-              return const Text('Проекты');
-            }, employeesloaded: (selectedMarginality, data) {
-              return MarginalityEmployeesDatatable(data: data, selectedMarginality: selectedMarginality);
-            }, departmentsloaded: (selectedMarginality, data) {
-              return const Text('Отделы');
+            companiesloaded: (selectedCurrency, selectedMarginality, data) {
+              return MarginalityCompaniesDatatable(data: data,
+                  selectedMarginality: selectedMarginality,
+                  selectedCurrency: selectedCurrency);
+            }, projectsloaded: (selectedCurrency, selectedMarginality, data) {
+              return MarginalityProjectsDatatable(data: data,
+                  selectedMarginality: selectedMarginality,
+                  selectedCurrency: selectedCurrency);
+            }, employeesloaded: (selectedCurrency, selectedMarginality, data) {
+              return MarginalityEmployeesDatatable(data: data,
+                  selectedMarginality: selectedMarginality,
+                  selectedCurrency: selectedCurrency);
+            }, departmentsloaded: (selectedCurrency, selectedMarginality, data) {
+              return MarginalityDepartmentsDatatable(data: data,
+                  selectedMarginality: selectedMarginality,
+                  selectedCurrency: selectedCurrency);
             }
             );
         }

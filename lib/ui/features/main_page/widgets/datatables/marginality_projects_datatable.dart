@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_internship_1/domain/features/marginality/models/marginality_employees.dart';
+import 'package:mobile_internship_1/domain/features/marginality/models/marginality_projects.dart';
 import 'package:mobile_internship_1/ui/common/colors.dart';
 
 
-class MarginalityEmployeesDatatable extends StatefulWidget {
-  final List<MarginalityEmployees> data;
+class MarginalityProjectsDatatable extends StatefulWidget {
+  final List<MarginalityProjects> data;
   final String selectedMarginality;
   final String selectedCurrency;
-  const MarginalityEmployeesDatatable({
+  const MarginalityProjectsDatatable({
     super.key,
     required this.data,
-    required this.selectedMarginality,
-    required this.selectedCurrency});
+    required this.selectedMarginality, required this.selectedCurrency});
 
 
   @override
-  State<MarginalityEmployeesDatatable> createState() => _MarginalityEmployeesDatatableState();
+  State<MarginalityProjectsDatatable> createState() => _MarginalityProjectsDatatableState();
 }
-class _MarginalityEmployeesDatatableState extends State<MarginalityEmployeesDatatable> {
+class _MarginalityProjectsDatatableState extends State<MarginalityProjectsDatatable> {
   bool _sortNameAsc = true;
   bool _sortMarginAsc = true;
   bool _sortMarginalityAsc = true;
@@ -27,22 +26,22 @@ class _MarginalityEmployeesDatatableState extends State<MarginalityEmployeesData
   Color _currencySelectColor = AppColors.white;
   Color _percSelectColor = AppColors.white;
   String _selectedCurrency = '';
-  List<MarginalityEmployees> _data = [];
-  List<MarginalityEmployees> _unfilteredData = [];
+  List<MarginalityProjects> _data = [];
+  List<MarginalityProjects> _unfilteredData = [];
   @override
   initState() {
     super.initState();
     _selectedCurrency = widget.selectedCurrency;
-    _data = List<MarginalityEmployees>.from(widget.data.take(8));
+    _data = List<MarginalityProjects>.from(widget.data.take(8));
     _unfilteredData = _data;
   }
   @override
   Widget build(BuildContext context) {
     List<DataColumn> cols = [
       DataColumn(
-        label:  Text('Имя', style:TextStyle(
+        label:  Text('Название', style:TextStyle(
             color:_nameSelectColor
-          )
+        )
         ),
         onSort: (columnIndex, sortAscending) {
           setState(() {
@@ -65,7 +64,7 @@ class _MarginalityEmployeesDatatableState extends State<MarginalityEmployeesData
       DataColumn(
         label:  Text('В валюте',
             style: TextStyle(color: _currencySelectColor,
-          )
+            )
         ),
         onSort: (columnIndex, sortAscending) {
           setState(() {
@@ -89,7 +88,7 @@ class _MarginalityEmployeesDatatableState extends State<MarginalityEmployeesData
       DataColumn(
         label:  Text('В проц.',
             style: TextStyle(color: _percSelectColor
-          )
+            )
         ),
         onSort: (columnIndex, sortAscending) {
           setState(() {
@@ -126,7 +125,7 @@ class _MarginalityEmployeesDatatableState extends State<MarginalityEmployeesData
         if(_selectedCurrency == 'rub') {
           row.cells.add(DataCell(
               Text('${'${marginality.margin}'.substring(0, maxCellLength)}...₽')
-            )
+          )
           );
         }
         if(_selectedCurrency == 'usd') {
@@ -167,15 +166,15 @@ class _MarginalityEmployeesDatatableState extends State<MarginalityEmployeesData
                         height: 50,
                         width: double.infinity,
                         child:TextField(
-                          onChanged: (value) {
-                            setState(() {
-                              if(value.isEmpty) {
-                                _data = _unfilteredData;
-                              }
-                              _data = _data.where((x) => x.name.toLowerCase().
-                              contains(value.toLowerCase())).toList();
-                            });
-                          },
+                            onChanged: (value) {
+                              setState(() {
+                                if(value.isEmpty) {
+                                  _data = _unfilteredData;
+                                }
+                                _data = _data.where((x) => x.name.toLowerCase().
+                                contains(value.toLowerCase())).toList();
+                              });
+                            },
                             style: const TextStyle(
                                 color: AppColors.gray_1,
                                 fontSize: 18
@@ -189,7 +188,7 @@ class _MarginalityEmployeesDatatableState extends State<MarginalityEmployeesData
                                 borderSide: BorderSide(
                                     color: AppColors.white, width: 2.0),
                               ),
-                              hintText: 'Search by employee name...',
+                              hintText: 'Search by project name...',
                               hintStyle: TextStyle(
                                   color: AppColors.gray_1,
                                   fontSize: 15
@@ -220,7 +219,7 @@ class _MarginalityEmployeesDatatableState extends State<MarginalityEmployeesData
                       height: 450,
                       width: double.infinity,
                       child: DataTable(
-                        columnSpacing: 45,
+                        columnSpacing: 40,
                         horizontalMargin: 15,
                         columns: cols,
                         rows: rows.toList(),

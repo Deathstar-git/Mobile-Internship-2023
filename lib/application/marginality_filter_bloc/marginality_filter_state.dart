@@ -9,10 +9,12 @@ class MarginalityFilterState with _$MarginalityFilterState {
       List<String> periods,
       String selectedPeriod,
       String selectedYear,
-      String selectedMonth) = _Loaded;
+      String selectedMonth,
+      String selectedCurrency) = _Loaded;
   const factory MarginalityFilterState.itemSelected(List<String> periods,
       String selectedPeriod,
       String selectedYear,
-      String selectedMonth) = _ItemSelected;
+      String selectedMonth,
+      String selectedCurrency) = _ItemSelected;
 
 }

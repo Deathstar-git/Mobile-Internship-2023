@@ -16,6 +16,7 @@ class MarginalityFilterBloc extends Bloc<MarginalityFilterEvent, MarginalityFilt
   String selectedPeriod = '';
   String selectedYear = '';
   String selectedMonth = '';
+  String selectedCurrency = '';
   final List<String> periods = [
     'Месяц',
     'Квартал',
@@ -31,7 +32,8 @@ class MarginalityFilterBloc extends Bloc<MarginalityFilterEvent, MarginalityFilt
     selectedPeriod = sharedPref.getMarginalityPeriodItem();
     selectedYear = sharedPref.getMarginalityPeriodYear();
     selectedMonth = sharedPref.getMarginalityPeriodMonth();
-    emit(_Loaded(periods, selectedPeriod, selectedYear, selectedMonth));
+    selectedCurrency = sharedPref.getMarginalityCurrency();
+    emit(_Loaded(periods, selectedPeriod, selectedYear, selectedMonth, selectedCurrency));
   }
   Future<void> _onValueChanged(
       ValueChanged event,
@@ -40,7 +42,8 @@ class MarginalityFilterBloc extends Bloc<MarginalityFilterEvent, MarginalityFilt
     selectedPeriod = sharedPref.getMarginalityPeriodItem();
     selectedYear = sharedPref.getMarginalityPeriodYear();
     selectedMonth = sharedPref.getMarginalityPeriodMonth();
-    emit(_ItemSelected(periods, selectedPeriod, selectedYear, selectedMonth));
+    selectedCurrency = sharedPref.getMarginalityCurrency();
+    emit(_ItemSelected(periods, selectedPeriod, selectedYear, selectedMonth, selectedCurrency));
   }
 
   MarginalityFilterBloc(this.sharedPref) : super(const _Initial()) {

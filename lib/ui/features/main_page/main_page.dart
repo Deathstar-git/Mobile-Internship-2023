@@ -5,6 +5,7 @@ import 'package:mobile_internship_1/ui/features/main_page/widgets/marginality_ch
 import 'package:mobile_internship_1/ui/features/main_page/widgets/marginality_list.dart';
 import 'package:mobile_internship_1/ui/navigation/routes.gr.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 //Главная страница
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -12,6 +13,7 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.black_5,
       resizeToAvoidBottomInset: false, //избегание overflow при появлении клавиатуры
       appBar: AppBar(
           backgroundColor: AppColors.black_1,
@@ -51,7 +53,9 @@ class MainPage extends StatelessWidget {
           ],
           ),
 
-      body:Column(children: const [
+      body:SizedBox(
+          height: 670,
+          child:Column(children:const [
           SizedBox(
             height: 60,
             child: MarginalityChoice()
@@ -59,9 +63,17 @@ class MainPage extends StatelessWidget {
           SizedBox(
             height: 550,
             child:MarginalityList()
+          ),
+          ColoredBox(
+            color:AppColors.black_5,
+            child: SizedBox(
+              width: double.infinity,
+              height: 60,
+          )
           )
         ],
-      ),
+      )
+    ),
       // create: (_) => getIt<MarginalityBloc>(),
     );
   }

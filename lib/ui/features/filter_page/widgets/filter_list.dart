@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_internship_1/ui/common/colors.dart';
+import 'package:mobile_internship_1/ui/features/filter_page/widgets/currency_radio.dart';
 import 'package:mobile_internship_1/ui/features/filter_page/widgets/periods_dropdown.dart';
 import 'package:mobile_internship_1/ui/features/filter_page/widgets/table_calendar.dart';
 
@@ -10,12 +11,24 @@ class FilterList extends StatelessWidget {
   final String selectedPeriod;
   final String selectedYear;
   final String selectedMonth;
+  final String selectedCurrency;
   const FilterList({super.key,
     required this.periods,
     required this.selectedPeriod,
     required this.selectedYear,
-    required this.selectedMonth});
-
+    required this.selectedMonth,
+    required this.selectedCurrency});
+  
+  Currency parseCurrencyValue(String str) {
+    switch(selectedCurrency) {
+      case 'rub':
+        return Currency.ruble;
+      case 'usd':
+        return Currency.dollar;
+      default:
+        return Currency.ruble;
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return ColoredBox(
@@ -24,17 +37,8 @@ class FilterList extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 20, bottom: 10),
-              child: Column(
-                children: const [
-                  Text('Валюта',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: AppColors.gray_1,
-                      )
-                  ),
-                  //TODO: Добавить виджет выбора валюты
-                ],
-              ),
+              child: CurrencyRadio(selectedCurrency: parseCurrencyValue(selectedCurrency))
+
             ),
             Padding(
                 padding: const EdgeInsets.only(bottom: 20),
