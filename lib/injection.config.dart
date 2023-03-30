@@ -25,7 +25,7 @@ import 'package:mobile_internship_1/infrastructure/common/injection_module.dart'
     as _i17;
 import 'package:mobile_internship_1/infrastructure/features/auth/auth_repository.dart'
     as _i8;
-import 'package:mobile_internship_1/infrastructure/features/MarginalityEmployees/MarginalityEmployeesRepository.dart'
+import 'package:mobile_internship_1/infrastructure/features/MarginalityEmployees/MarginalityRepository.dart'
     as _i12;
 import 'package:mobile_internship_1/infrastructure/features/prefs/shared_prefs.dart'
     as _i13;
@@ -58,8 +58,8 @@ extension GetItInjectableX on _i1.GetIt {
       () => serviceModule.prefs,
       preResolve: true,
     );
-    gh.factory<_i11.IMarginalityRepository>(() =>
-        _i12.MarginalityEmployeesRepository(gh<_i9.MarginalityApiClient>()));
+    gh.factory<_i11.IMarginalityRepository>(
+        () => _i12.MarginalityRepository(gh<_i9.MarginalityApiClient>()));
     gh.factory<_i13.SharedPref>(
         () => _i13.SharedPref(gh<_i10.SharedPreferences>()));
     gh.factory<_i14.MarginalityBloc>(() => _i14.MarginalityBloc(

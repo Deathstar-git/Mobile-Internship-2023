@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mobile_internship_1/ui/common/colors.dart';
 
+import '../../../../application/marginality_bloc/marginality_bloc.dart';
 import '../../../../application/marginality_filter_bloc/marginality_filter_bloc.dart';
 
 // Индикатор загрузки для infinity list'ов
@@ -61,6 +62,7 @@ class PeriodsDropdown extends StatelessWidget {
                     onChanged: (value) {
                       context.read<MarginalityFilterBloc>().sharedPref.setMarginalityPeriodItem(value as String);
                       context.read<MarginalityFilterBloc>().add(const MarginalityFilterEvent.valueChanged());
+                      context.read<MarginalityBloc>().add(const MarginalityEvent.newFilterSelected());
                     },
                     buttonStyleData: ButtonStyleData(
                         height: 40,

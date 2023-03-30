@@ -19,19 +19,23 @@ class MarginalityTableCalendar extends StatelessWidget {
   //TODO: Реализовать выбор месяца и квартала аналогично,вынести в отдельный виджет
   String _convertDateMonthtoString(String str) { // 01/06/2023 - 30/06/2023
     initializeDateFormatting('ru');
+    String oneDate = str.split(' -').first;
+    List<String> dMY = oneDate.split('/');
     return DateFormat.yMMMM('ru').format(DateTime.utc(
-         int.parse('2${str.substring(7, 10)}'),
-        int.parse(str.substring(4, 5)),
-        int.parse(str.substring(1, 2))
+         int.parse(dMY[2]),
+        int.parse(dMY[1]),
+        int.parse(dMY[0])
       )
     );
   }
   String _convertDateYeartoString(String str) {
     initializeDateFormatting('ru');
+    String oneDate = str.split(' -').first;
+    List<String> dMY = oneDate.split('/');
     return DateFormat.y('ru').format(DateTime.utc(
-        int.parse('2${str.substring(7, 10)}'),
-        int.parse(str.substring(4, 5)),
-        int.parse(str.substring(1, 2))
+        int.parse(dMY[2]),
+        int.parse(dMY[1]),
+        int.parse(dMY[0])
     )
     );
   }

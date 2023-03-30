@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:mobile_internship_1/ui/common/colors.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
+import '../../../../../application/marginality_bloc/marginality_bloc.dart';
 import '../../../../../application/marginality_filter_bloc/marginality_filter_bloc.dart';
 
 
@@ -47,6 +48,8 @@ class ShowMonthCalendar extends StatelessWidget {
                     .format(DateTime.utc(args.value.year, args.value.month + 1, 0))}');
                 context.read<MarginalityFilterBloc>().
                 add(const MarginalityFilterEvent.valueChanged());
+                context.read<MarginalityBloc>().
+                add(const MarginalityEvent.newFilterSelected());
               },
               selectionMode: DateRangePickerSelectionMode.single,
             )

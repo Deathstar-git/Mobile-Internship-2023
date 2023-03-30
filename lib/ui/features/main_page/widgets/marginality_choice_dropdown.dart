@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mobile_internship_1/ui/common/colors.dart';
 
+import '../../../../application/marginality_bloc/marginality_bloc.dart';
 import '../../../../application/marginality_choice_bloc/marginality_choice_bloc.dart';
 
 class MarginalityChoiceDropdown extends StatelessWidget {
@@ -64,6 +65,7 @@ class MarginalityChoiceDropdown extends StatelessWidget {
                       onChanged: (value) {
                         context.read<MarginalityChoiceBloc>().sharedPref.setMarginalityChoice(value as String);
                         context.read<MarginalityChoiceBloc>().add(const MarginalityChoiceEvent.valueChanged());
+                        context.read<MarginalityBloc>().add(const MarginalityEvent.newFilterSelected());
                       },
                       buttonStyleData: const ButtonStyleData(
                         height: 40,
