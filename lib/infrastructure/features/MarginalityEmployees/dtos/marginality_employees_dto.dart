@@ -1,28 +1,32 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:mobile_internship_1/domain/features/marginality/models/marginality_employees.dart';
 
-class GeoStormDTO {
-  final String id;
-  final int marginality;
-  final int margin;
-  final int volume;
-  final int rate;
-  final int total;
-  final double salary;
+part 'marginality_employees_dto.freezed.dart';
 
-  GeoStormDTO.fromApi(Map<String, dynamic> map)
-      : id = map['id'],
-        marginality = int.parse(map['marginality']),
-        margin = int.parse(map['margin']),
-        volume = int.parse(map['volume']),
-        rate = int.parse(map['rate']),
-        total = int.parse(map['rate']),
-        salary = double.parse(map['salary']);
-}
+part 'marginality_employees_dto.g.dart';
 
-extension GeoStormMapper on GeoStormDTO {
-  MarginalityEmployees toModel() {
+@freezed
+class MarginalityEmployeesDto with _$MarginalityEmployeesDto{
+  const factory MarginalityEmployeesDto({
+    @JsonKey(name: '_id') required  String id,
+    required String name,
+    required int marginality,
+    required int margin,
+    required double volume,
+    required int rate,
+    required int total,
+    required double salary
+  }) = _MarginalityEmployeesDto;
+
+  const MarginalityEmployeesDto._();
+
+  factory MarginalityEmployeesDto.fromJson(Map<String, dynamic> json)
+  => _$MarginalityEmployeesDtoFromJson(json);
+
+  MarginalityEmployees toDomain() {
     return MarginalityEmployees(
         id: id,
+        name: name,
         marginality: marginality,
         margin: margin,
         volume: volume,
@@ -31,3 +35,5 @@ extension GeoStormMapper on GeoStormDTO {
         salary: salary);
   }
 }
+
+

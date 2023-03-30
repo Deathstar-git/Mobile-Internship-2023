@@ -19,32 +19,38 @@ mixin _$MarginalityEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() valueChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? valueChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? valueChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(Started value) started,
+    required TResult Function(ValueChanged value) valueChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(Started value)? started,
+    TResult? Function(ValueChanged value)? valueChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(Started value)? started,
+    TResult Function(ValueChanged value)? valueChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -69,24 +75,23 @@ class _$MarginalityEventCopyWithImpl<$Res, $Val extends MarginalityEvent>
 }
 
 /// @nodoc
-abstract class _$$_StartedCopyWith<$Res> {
-  factory _$$_StartedCopyWith(
-          _$_Started value, $Res Function(_$_Started) then) =
-      __$$_StartedCopyWithImpl<$Res>;
+abstract class _$$StartedCopyWith<$Res> {
+  factory _$$StartedCopyWith(_$Started value, $Res Function(_$Started) then) =
+      __$$StartedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_StartedCopyWithImpl<$Res>
-    extends _$MarginalityEventCopyWithImpl<$Res, _$_Started>
-    implements _$$_StartedCopyWith<$Res> {
-  __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
+class __$$StartedCopyWithImpl<$Res>
+    extends _$MarginalityEventCopyWithImpl<$Res, _$Started>
+    implements _$$StartedCopyWith<$Res> {
+  __$$StartedCopyWithImpl(_$Started _value, $Res Function(_$Started) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Started implements _Started {
-  const _$_Started();
+class _$Started implements Started {
+  const _$Started();
 
   @override
   String toString() {
@@ -96,7 +101,7 @@ class _$_Started implements _Started {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Started);
+        (other.runtimeType == runtimeType && other is _$Started);
   }
 
   @override
@@ -106,6 +111,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() valueChanged,
   }) {
     return started();
   }
@@ -114,6 +120,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? valueChanged,
   }) {
     return started?.call();
   }
@@ -122,6 +129,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? valueChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -133,7 +141,8 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(Started value) started,
+    required TResult Function(ValueChanged value) valueChanged,
   }) {
     return started(this);
   }
@@ -141,7 +150,8 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(Started value)? started,
+    TResult? Function(ValueChanged value)? valueChanged,
   }) {
     return started?.call(this);
   }
@@ -149,7 +159,8 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(Started value)? started,
+    TResult Function(ValueChanged value)? valueChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -159,8 +170,110 @@ class _$_Started implements _Started {
   }
 }
 
-abstract class _Started implements MarginalityEvent {
-  const factory _Started() = _$_Started;
+abstract class Started implements MarginalityEvent {
+  const factory Started() = _$Started;
+}
+
+/// @nodoc
+abstract class _$$ValueChangedCopyWith<$Res> {
+  factory _$$ValueChangedCopyWith(
+          _$ValueChanged value, $Res Function(_$ValueChanged) then) =
+      __$$ValueChangedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ValueChangedCopyWithImpl<$Res>
+    extends _$MarginalityEventCopyWithImpl<$Res, _$ValueChanged>
+    implements _$$ValueChangedCopyWith<$Res> {
+  __$$ValueChangedCopyWithImpl(
+      _$ValueChanged _value, $Res Function(_$ValueChanged) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ValueChanged implements ValueChanged {
+  const _$ValueChanged();
+
+  @override
+  String toString() {
+    return 'MarginalityEvent.valueChanged()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ValueChanged);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() valueChanged,
+  }) {
+    return valueChanged();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? valueChanged,
+  }) {
+    return valueChanged?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? valueChanged,
+    required TResult orElse(),
+  }) {
+    if (valueChanged != null) {
+      return valueChanged();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Started value) started,
+    required TResult Function(ValueChanged value) valueChanged,
+  }) {
+    return valueChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Started value)? started,
+    TResult? Function(ValueChanged value)? valueChanged,
+  }) {
+    return valueChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Started value)? started,
+    TResult Function(ValueChanged value)? valueChanged,
+    required TResult orElse(),
+  }) {
+    if (valueChanged != null) {
+      return valueChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ValueChanged implements MarginalityEvent {
+  const factory ValueChanged() = _$ValueChanged;
 }
 
 /// @nodoc
@@ -169,27 +282,30 @@ mixin _$MarginalityState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<String> periods, String selectedPeriod)
+    required TResult Function(
+            List<MarginalityEmployees> data, String selectedMarginality)
         loaded,
-    required TResult Function(List<String> periods, String selectedPeriod)
-        itemSelected,
+    required TResult Function(String selectedMarginality) itemSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<String> periods, String selectedPeriod)? loaded,
-    TResult? Function(List<String> periods, String selectedPeriod)?
-        itemSelected,
+    TResult? Function(
+            List<MarginalityEmployees> data, String selectedMarginality)?
+        loaded,
+    TResult? Function(String selectedMarginality)? itemSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<String> periods, String selectedPeriod)? loaded,
-    TResult Function(List<String> periods, String selectedPeriod)? itemSelected,
+    TResult Function(
+            List<MarginalityEmployees> data, String selectedMarginality)?
+        loaded,
+    TResult Function(String selectedMarginality)? itemSelected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -277,10 +393,10 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<String> periods, String selectedPeriod)
+    required TResult Function(
+            List<MarginalityEmployees> data, String selectedMarginality)
         loaded,
-    required TResult Function(List<String> periods, String selectedPeriod)
-        itemSelected,
+    required TResult Function(String selectedMarginality) itemSelected,
   }) {
     return initial();
   }
@@ -290,9 +406,10 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<String> periods, String selectedPeriod)? loaded,
-    TResult? Function(List<String> periods, String selectedPeriod)?
-        itemSelected,
+    TResult? Function(
+            List<MarginalityEmployees> data, String selectedMarginality)?
+        loaded,
+    TResult? Function(String selectedMarginality)? itemSelected,
   }) {
     return initial?.call();
   }
@@ -302,8 +419,10 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<String> periods, String selectedPeriod)? loaded,
-    TResult Function(List<String> periods, String selectedPeriod)? itemSelected,
+    TResult Function(
+            List<MarginalityEmployees> data, String selectedMarginality)?
+        loaded,
+    TResult Function(String selectedMarginality)? itemSelected,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -393,10 +512,10 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<String> periods, String selectedPeriod)
+    required TResult Function(
+            List<MarginalityEmployees> data, String selectedMarginality)
         loaded,
-    required TResult Function(List<String> periods, String selectedPeriod)
-        itemSelected,
+    required TResult Function(String selectedMarginality) itemSelected,
   }) {
     return loading();
   }
@@ -406,9 +525,10 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<String> periods, String selectedPeriod)? loaded,
-    TResult? Function(List<String> periods, String selectedPeriod)?
-        itemSelected,
+    TResult? Function(
+            List<MarginalityEmployees> data, String selectedMarginality)?
+        loaded,
+    TResult? Function(String selectedMarginality)? itemSelected,
   }) {
     return loading?.call();
   }
@@ -418,8 +538,10 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<String> periods, String selectedPeriod)? loaded,
-    TResult Function(List<String> periods, String selectedPeriod)? itemSelected,
+    TResult Function(
+            List<MarginalityEmployees> data, String selectedMarginality)?
+        loaded,
+    TResult Function(String selectedMarginality)? itemSelected,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -475,7 +597,7 @@ abstract class _$$_LoadedCopyWith<$Res> {
   factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
       __$$_LoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<String> periods, String selectedPeriod});
+  $Res call({List<MarginalityEmployees> data, String selectedMarginality});
 }
 
 /// @nodoc
@@ -488,17 +610,17 @@ class __$$_LoadedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? periods = null,
-    Object? selectedPeriod = null,
+    Object? data = null,
+    Object? selectedMarginality = null,
   }) {
     return _then(_$_Loaded(
-      null == periods
-          ? _value._periods
-          : periods // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      null == selectedPeriod
-          ? _value.selectedPeriod
-          : selectedPeriod // ignore: cast_nullable_to_non_nullable
+      null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<MarginalityEmployees>,
+      null == selectedMarginality
+          ? _value.selectedMarginality
+          : selectedMarginality // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -507,23 +629,24 @@ class __$$_LoadedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Loaded implements _Loaded {
-  const _$_Loaded(final List<String> periods, this.selectedPeriod)
-      : _periods = periods;
+  const _$_Loaded(
+      final List<MarginalityEmployees> data, this.selectedMarginality)
+      : _data = data;
 
-  final List<String> _periods;
+  final List<MarginalityEmployees> _data;
   @override
-  List<String> get periods {
-    if (_periods is EqualUnmodifiableListView) return _periods;
+  List<MarginalityEmployees> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_periods);
+    return EqualUnmodifiableListView(_data);
   }
 
   @override
-  final String selectedPeriod;
+  final String selectedMarginality;
 
   @override
   String toString() {
-    return 'MarginalityState.loaded(periods: $periods, selectedPeriod: $selectedPeriod)';
+    return 'MarginalityState.loaded(data: $data, selectedMarginality: $selectedMarginality)';
   }
 
   @override
@@ -531,14 +654,14 @@ class _$_Loaded implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Loaded &&
-            const DeepCollectionEquality().equals(other._periods, _periods) &&
-            (identical(other.selectedPeriod, selectedPeriod) ||
-                other.selectedPeriod == selectedPeriod));
+            const DeepCollectionEquality().equals(other._data, _data) &&
+            (identical(other.selectedMarginality, selectedMarginality) ||
+                other.selectedMarginality == selectedMarginality));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_periods), selectedPeriod);
+      const DeepCollectionEquality().hash(_data), selectedMarginality);
 
   @JsonKey(ignore: true)
   @override
@@ -551,12 +674,12 @@ class _$_Loaded implements _Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<String> periods, String selectedPeriod)
+    required TResult Function(
+            List<MarginalityEmployees> data, String selectedMarginality)
         loaded,
-    required TResult Function(List<String> periods, String selectedPeriod)
-        itemSelected,
+    required TResult Function(String selectedMarginality) itemSelected,
   }) {
-    return loaded(periods, selectedPeriod);
+    return loaded(data, selectedMarginality);
   }
 
   @override
@@ -564,11 +687,12 @@ class _$_Loaded implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<String> periods, String selectedPeriod)? loaded,
-    TResult? Function(List<String> periods, String selectedPeriod)?
-        itemSelected,
+    TResult? Function(
+            List<MarginalityEmployees> data, String selectedMarginality)?
+        loaded,
+    TResult? Function(String selectedMarginality)? itemSelected,
   }) {
-    return loaded?.call(periods, selectedPeriod);
+    return loaded?.call(data, selectedMarginality);
   }
 
   @override
@@ -576,12 +700,14 @@ class _$_Loaded implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<String> periods, String selectedPeriod)? loaded,
-    TResult Function(List<String> periods, String selectedPeriod)? itemSelected,
+    TResult Function(
+            List<MarginalityEmployees> data, String selectedMarginality)?
+        loaded,
+    TResult Function(String selectedMarginality)? itemSelected,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(periods, selectedPeriod);
+      return loaded(data, selectedMarginality);
     }
     return orElse();
   }
@@ -625,11 +751,11 @@ class _$_Loaded implements _Loaded {
 }
 
 abstract class _Loaded implements MarginalityState {
-  const factory _Loaded(
-      final List<String> periods, final String selectedPeriod) = _$_Loaded;
+  const factory _Loaded(final List<MarginalityEmployees> data,
+      final String selectedMarginality) = _$_Loaded;
 
-  List<String> get periods;
-  String get selectedPeriod;
+  List<MarginalityEmployees> get data;
+  String get selectedMarginality;
   @JsonKey(ignore: true)
   _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -641,7 +767,7 @@ abstract class _$$_ItemSelectedCopyWith<$Res> {
           _$_ItemSelected value, $Res Function(_$_ItemSelected) then) =
       __$$_ItemSelectedCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<String> periods, String selectedPeriod});
+  $Res call({String selectedMarginality});
 }
 
 /// @nodoc
@@ -655,17 +781,12 @@ class __$$_ItemSelectedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? periods = null,
-    Object? selectedPeriod = null,
+    Object? selectedMarginality = null,
   }) {
     return _then(_$_ItemSelected(
-      null == periods
-          ? _value._periods
-          : periods // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      null == selectedPeriod
-          ? _value.selectedPeriod
-          : selectedPeriod // ignore: cast_nullable_to_non_nullable
+      null == selectedMarginality
+          ? _value.selectedMarginality
+          : selectedMarginality // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -674,23 +795,14 @@ class __$$_ItemSelectedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ItemSelected implements _ItemSelected {
-  const _$_ItemSelected(final List<String> periods, this.selectedPeriod)
-      : _periods = periods;
-
-  final List<String> _periods;
-  @override
-  List<String> get periods {
-    if (_periods is EqualUnmodifiableListView) return _periods;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_periods);
-  }
+  const _$_ItemSelected(this.selectedMarginality);
 
   @override
-  final String selectedPeriod;
+  final String selectedMarginality;
 
   @override
   String toString() {
-    return 'MarginalityState.itemSelected(periods: $periods, selectedPeriod: $selectedPeriod)';
+    return 'MarginalityState.itemSelected(selectedMarginality: $selectedMarginality)';
   }
 
   @override
@@ -698,14 +810,12 @@ class _$_ItemSelected implements _ItemSelected {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ItemSelected &&
-            const DeepCollectionEquality().equals(other._periods, _periods) &&
-            (identical(other.selectedPeriod, selectedPeriod) ||
-                other.selectedPeriod == selectedPeriod));
+            (identical(other.selectedMarginality, selectedMarginality) ||
+                other.selectedMarginality == selectedMarginality));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_periods), selectedPeriod);
+  int get hashCode => Object.hash(runtimeType, selectedMarginality);
 
   @JsonKey(ignore: true)
   @override
@@ -718,12 +828,12 @@ class _$_ItemSelected implements _ItemSelected {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<String> periods, String selectedPeriod)
+    required TResult Function(
+            List<MarginalityEmployees> data, String selectedMarginality)
         loaded,
-    required TResult Function(List<String> periods, String selectedPeriod)
-        itemSelected,
+    required TResult Function(String selectedMarginality) itemSelected,
   }) {
-    return itemSelected(periods, selectedPeriod);
+    return itemSelected(selectedMarginality);
   }
 
   @override
@@ -731,11 +841,12 @@ class _$_ItemSelected implements _ItemSelected {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<String> periods, String selectedPeriod)? loaded,
-    TResult? Function(List<String> periods, String selectedPeriod)?
-        itemSelected,
+    TResult? Function(
+            List<MarginalityEmployees> data, String selectedMarginality)?
+        loaded,
+    TResult? Function(String selectedMarginality)? itemSelected,
   }) {
-    return itemSelected?.call(periods, selectedPeriod);
+    return itemSelected?.call(selectedMarginality);
   }
 
   @override
@@ -743,12 +854,14 @@ class _$_ItemSelected implements _ItemSelected {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<String> periods, String selectedPeriod)? loaded,
-    TResult Function(List<String> periods, String selectedPeriod)? itemSelected,
+    TResult Function(
+            List<MarginalityEmployees> data, String selectedMarginality)?
+        loaded,
+    TResult Function(String selectedMarginality)? itemSelected,
     required TResult orElse(),
   }) {
     if (itemSelected != null) {
-      return itemSelected(periods, selectedPeriod);
+      return itemSelected(selectedMarginality);
     }
     return orElse();
   }
@@ -792,12 +905,10 @@ class _$_ItemSelected implements _ItemSelected {
 }
 
 abstract class _ItemSelected implements MarginalityState {
-  const factory _ItemSelected(
-          final List<String> periods, final String selectedPeriod) =
+  const factory _ItemSelected(final String selectedMarginality) =
       _$_ItemSelected;
 
-  List<String> get periods;
-  String get selectedPeriod;
+  String get selectedMarginality;
   @JsonKey(ignore: true)
   _$$_ItemSelectedCopyWith<_$_ItemSelected> get copyWith =>
       throw _privateConstructorUsedError;

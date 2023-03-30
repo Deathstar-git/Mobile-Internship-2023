@@ -1,27 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'marginality_employees.dart';
+part of 'marginality_employees_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_MarginalityEmployees _$$_MarginalityEmployeesFromJson(
+_$_MarginalityEmployeesDto _$$_MarginalityEmployeesDtoFromJson(
         Map<String, dynamic> json) =>
-    _$_MarginalityEmployees(
-      id: json['id'] as String,
+    _$_MarginalityEmployeesDto(
+      id: json['_id'] as String,
+      name: json['name'] as String,
       marginality: json['marginality'] as int,
       margin: json['margin'] as int,
-      volume: json['volume'] as int,
+      volume: (json['volume'] as num).toDouble(),
       rate: json['rate'] as int,
       total: json['total'] as int,
       salary: (json['salary'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$_MarginalityEmployeesToJson(
-        _$_MarginalityEmployees instance) =>
+Map<String, dynamic> _$$_MarginalityEmployeesDtoToJson(
+        _$_MarginalityEmployeesDto instance) =>
     <String, dynamic>{
-      'id': instance.id,
+      '_id': instance.id,
+      'name': instance.name,
       'marginality': instance.marginality,
       'margin': instance.margin,
       'volume': instance.volume,

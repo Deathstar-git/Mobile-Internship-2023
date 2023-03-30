@@ -49,25 +49,4 @@ Future<void> _onValueChanged(
       transformer: sequential());
   }
 
-  // @override
-  // Stream<MarginalityChoiceState> mapEventToState(MarginalityChoiceEvent event) async* {
-  //   yield* event.map(
-  //     started: (event) async* {
-  //       yield state.copyWith(
-  //         choices: choices,
-  //         selectedValue: selectedValue,
-  //       );
-  //     },
-  //     valueChanged: (event) async* {
-  //       yield state.copyWith(
-  //         choices: choices,
-  //         selectedValue: event.selectedValue,
-  //       );
-  //     },
-  //   );
-  }
-
-  //
-
-  // }
-
+}

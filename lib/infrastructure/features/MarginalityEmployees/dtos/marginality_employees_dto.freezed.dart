@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'marginality_employees.dart';
+part of 'marginality_employees_dto.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,8 +14,14 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+MarginalityEmployeesDto _$MarginalityEmployeesDtoFromJson(
+    Map<String, dynamic> json) {
+  return _MarginalityEmployeesDto.fromJson(json);
+}
+
 /// @nodoc
-mixin _$MarginalityEmployees {
+mixin _$MarginalityEmployeesDto {
+  @JsonKey(name: '_id')
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   int get marginality => throw _privateConstructorUsedError;
@@ -25,19 +31,20 @@ mixin _$MarginalityEmployees {
   int get total => throw _privateConstructorUsedError;
   double get salary => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MarginalityEmployeesCopyWith<MarginalityEmployees> get copyWith =>
+  $MarginalityEmployeesDtoCopyWith<MarginalityEmployeesDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MarginalityEmployeesCopyWith<$Res> {
-  factory $MarginalityEmployeesCopyWith(MarginalityEmployees value,
-          $Res Function(MarginalityEmployees) then) =
-      _$MarginalityEmployeesCopyWithImpl<$Res, MarginalityEmployees>;
+abstract class $MarginalityEmployeesDtoCopyWith<$Res> {
+  factory $MarginalityEmployeesDtoCopyWith(MarginalityEmployeesDto value,
+          $Res Function(MarginalityEmployeesDto) then) =
+      _$MarginalityEmployeesDtoCopyWithImpl<$Res, MarginalityEmployeesDto>;
   @useResult
   $Res call(
-      {String id,
+      {@JsonKey(name: '_id') String id,
       String name,
       int marginality,
       int margin,
@@ -48,10 +55,10 @@ abstract class $MarginalityEmployeesCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MarginalityEmployeesCopyWithImpl<$Res,
-        $Val extends MarginalityEmployees>
-    implements $MarginalityEmployeesCopyWith<$Res> {
-  _$MarginalityEmployeesCopyWithImpl(this._value, this._then);
+class _$MarginalityEmployeesDtoCopyWithImpl<$Res,
+        $Val extends MarginalityEmployeesDto>
+    implements $MarginalityEmployeesDtoCopyWith<$Res> {
+  _$MarginalityEmployeesDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -108,15 +115,15 @@ class _$MarginalityEmployeesCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_MarginalityEmployeesCopyWith<$Res>
-    implements $MarginalityEmployeesCopyWith<$Res> {
-  factory _$$_MarginalityEmployeesCopyWith(_$_MarginalityEmployees value,
-          $Res Function(_$_MarginalityEmployees) then) =
-      __$$_MarginalityEmployeesCopyWithImpl<$Res>;
+abstract class _$$_MarginalityEmployeesDtoCopyWith<$Res>
+    implements $MarginalityEmployeesDtoCopyWith<$Res> {
+  factory _$$_MarginalityEmployeesDtoCopyWith(_$_MarginalityEmployeesDto value,
+          $Res Function(_$_MarginalityEmployeesDto) then) =
+      __$$_MarginalityEmployeesDtoCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {String id,
+      {@JsonKey(name: '_id') String id,
       String name,
       int marginality,
       int margin,
@@ -127,11 +134,12 @@ abstract class _$$_MarginalityEmployeesCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MarginalityEmployeesCopyWithImpl<$Res>
-    extends _$MarginalityEmployeesCopyWithImpl<$Res, _$_MarginalityEmployees>
-    implements _$$_MarginalityEmployeesCopyWith<$Res> {
-  __$$_MarginalityEmployeesCopyWithImpl(_$_MarginalityEmployees _value,
-      $Res Function(_$_MarginalityEmployees) _then)
+class __$$_MarginalityEmployeesDtoCopyWithImpl<$Res>
+    extends _$MarginalityEmployeesDtoCopyWithImpl<$Res,
+        _$_MarginalityEmployeesDto>
+    implements _$$_MarginalityEmployeesDtoCopyWith<$Res> {
+  __$$_MarginalityEmployeesDtoCopyWithImpl(_$_MarginalityEmployeesDto _value,
+      $Res Function(_$_MarginalityEmployeesDto) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -146,7 +154,7 @@ class __$$_MarginalityEmployeesCopyWithImpl<$Res>
     Object? total = null,
     Object? salary = null,
   }) {
-    return _then(_$_MarginalityEmployees(
+    return _then(_$_MarginalityEmployeesDto(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -184,19 +192,24 @@ class __$$_MarginalityEmployeesCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
-class _$_MarginalityEmployees implements _MarginalityEmployees {
-  _$_MarginalityEmployees(
-      {required this.id,
+@JsonSerializable()
+class _$_MarginalityEmployeesDto extends _MarginalityEmployeesDto {
+  const _$_MarginalityEmployeesDto(
+      {@JsonKey(name: '_id') required this.id,
       required this.name,
       required this.marginality,
       required this.margin,
       required this.volume,
       required this.rate,
       required this.total,
-      required this.salary});
+      required this.salary})
+      : super._();
+
+  factory _$_MarginalityEmployeesDto.fromJson(Map<String, dynamic> json) =>
+      _$$_MarginalityEmployeesDtoFromJson(json);
 
   @override
+  @JsonKey(name: '_id')
   final String id;
   @override
   final String name;
@@ -215,14 +228,14 @@ class _$_MarginalityEmployees implements _MarginalityEmployees {
 
   @override
   String toString() {
-    return 'MarginalityEmployees(id: $id, name: $name, marginality: $marginality, margin: $margin, volume: $volume, rate: $rate, total: $total, salary: $salary)';
+    return 'MarginalityEmployeesDto(id: $id, name: $name, marginality: $marginality, margin: $margin, volume: $volume, rate: $rate, total: $total, salary: $salary)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MarginalityEmployees &&
+            other is _$_MarginalityEmployeesDto &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.marginality, marginality) ||
@@ -234,6 +247,7 @@ class _$_MarginalityEmployees implements _MarginalityEmployees {
             (identical(other.salary, salary) || other.salary == salary));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, id, name, marginality, margin, volume, rate, total, salary);
@@ -241,23 +255,36 @@ class _$_MarginalityEmployees implements _MarginalityEmployees {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MarginalityEmployeesCopyWith<_$_MarginalityEmployees> get copyWith =>
-      __$$_MarginalityEmployeesCopyWithImpl<_$_MarginalityEmployees>(
-          this, _$identity);
+  _$$_MarginalityEmployeesDtoCopyWith<_$_MarginalityEmployeesDto>
+      get copyWith =>
+          __$$_MarginalityEmployeesDtoCopyWithImpl<_$_MarginalityEmployeesDto>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_MarginalityEmployeesDtoToJson(
+      this,
+    );
+  }
 }
 
-abstract class _MarginalityEmployees implements MarginalityEmployees {
-  factory _MarginalityEmployees(
-      {required final String id,
+abstract class _MarginalityEmployeesDto extends MarginalityEmployeesDto {
+  const factory _MarginalityEmployeesDto(
+      {@JsonKey(name: '_id') required final String id,
       required final String name,
       required final int marginality,
       required final int margin,
       required final double volume,
       required final int rate,
       required final int total,
-      required final double salary}) = _$_MarginalityEmployees;
+      required final double salary}) = _$_MarginalityEmployeesDto;
+  const _MarginalityEmployeesDto._() : super._();
+
+  factory _MarginalityEmployeesDto.fromJson(Map<String, dynamic> json) =
+      _$_MarginalityEmployeesDto.fromJson;
 
   @override
+  @JsonKey(name: '_id')
   String get id;
   @override
   String get name;
@@ -275,6 +302,6 @@ abstract class _MarginalityEmployees implements MarginalityEmployees {
   double get salary;
   @override
   @JsonKey(ignore: true)
-  _$$_MarginalityEmployeesCopyWith<_$_MarginalityEmployees> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_MarginalityEmployeesDtoCopyWith<_$_MarginalityEmployeesDto>
+      get copyWith => throw _privateConstructorUsedError;
 }
