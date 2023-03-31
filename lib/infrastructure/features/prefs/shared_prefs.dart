@@ -7,17 +7,17 @@ class SharedPref {
   final String _marginalityChoiceItem = 'Тип маржинальности';
   final String _marginalityChoiceItemDefault = 'Маржинальность проекта';
   final String _marginalityPeriodItem = 'Период';
-  final String _marginalityPeriodItemDefault = 'Квартал';
+  final String _marginalityPeriodItemDefault = 'Месяц';
   final String _marginalityPeriodYear = 'Год';
   final String _marginalityCurrency = 'Валюта';
   final String _marginalityCurrencyDefault = 'rub';
   final String _marginalityPeriodYearDefault =  '${DateFormat('dd/MM/yyyy').
-  format(DateTime.now())} - ${DateFormat('dd/MM/yyyy')
-      .format(DateTime.now())}';
+  format(DateTime(DateTime.now().year, 1, 1))} - ${DateFormat('dd/MM/yyyy')
+      .format(DateTime(DateTime.now().year, 12, 31))}';
   final String _marginalityPeriodMonth = 'Месяц';
   final String _marginalityPeriodMonthDefault =  '${DateFormat('dd/MM/yyyy').
-  format(DateTime.now())} - ${DateFormat('dd/MM/yyyy')
-      .format(DateTime.now())}';
+  format(DateTime(DateTime.now().year, DateTime.now().month, 1))} - ${DateFormat('dd/MM/yyyy')
+      .format(DateTime(DateTime.now().year,DateTime.now().month + 1, 0 ))}';
   SharedPreferences pref;
   SharedPref(this.pref);
 
