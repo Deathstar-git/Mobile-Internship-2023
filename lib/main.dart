@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
     create: (_) => getIt<MarginalityChoiceBloc>()..add(const MarginalityChoiceEvent.started()),
     ),
     BlocProvider<MarginalityBloc>(
-    create: (_) => getIt<MarginalityBloc>()..add(const MarginalityEvent.started()),
+    create: (_) => getIt<MarginalityBloc>()..add(const MarginalityEvent.fetchData()),
     ),
     BlocProvider<MarginalityFilterBloc>(
     create: (_) => getIt<MarginalityFilterBloc>()..add(const MarginalityFilterEvent.started()),

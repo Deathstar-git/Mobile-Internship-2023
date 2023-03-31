@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
-import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:intl/intl.dart';
@@ -21,179 +20,16 @@ class MarginalityBloc extends Bloc<MarginalityEvent, MarginalityState> {
 
   SharedPref sharedPref;
   IMarginalityRepository repository;
-  Future<void> _onStarted(
-      Started event,
-      Emitter<MarginalityState> emit,
-      ) async {
-    emit(const _Loading());
-    String selectedMarginality = sharedPref.getMarginalityChoice();
-    switch(selectedMarginality) {
-      case 'Маржинальность сотрудников':
-        try {
-          List<MarginalityEmployees> data = await getFilteredData() as List<MarginalityEmployees>;
-          String selectedCurrency = sharedPref.getMarginalityCurrency();
-          emit(_EmployeesLoaded(selectedCurrency,selectedMarginality, data));
-        } on DioError{
-          List<MarginalityEmployees> data = [];
-          String selectedCurrency = sharedPref.getMarginalityCurrency();
-          emit(_EmployeesLoaded(selectedCurrency, selectedMarginality, data));
-        }
-        break;
-      case 'Маржинальность проекта':
-        try {
-          List<MarginalityProjects> data = await getFilteredData() as List<MarginalityProjects>;
-          String selectedCurrency = sharedPref.getMarginalityCurrency();
-          emit(_ProjectsLoaded(selectedCurrency, selectedMarginality, data));
-        } on DioError{
-          List<MarginalityProjects> data = [];
-          String selectedCurrency = sharedPref.getMarginalityCurrency();
-          emit(_ProjectsLoaded(selectedCurrency, selectedMarginality, data));
-        }
-        break;
-      case 'Маржинальность отдела':
-        try {
-          List<MarginalityDepartments> data = await getFilteredData() as List<
-              MarginalityDepartments>;
-          String selectedCurrency = sharedPref.getMarginalityCurrency();
-          emit(_DepartmentsLoaded(selectedCurrency, selectedMarginality, data));
-        } on DioError {
-          List<MarginalityDepartments> data = [];
-          String selectedCurrency = sharedPref.getMarginalityCurrency();
-          emit(_DepartmentsLoaded( selectedCurrency, selectedMarginality, data));
-        }
-        break;
-      case 'Маржинальность компании':
-        try {
-          List<MarginalityCompanies> data = await getFilteredData() as List<MarginalityCompanies>;
-          String selectedCurrency = sharedPref.getMarginalityCurrency();
-          emit(_CompaniesLoaded(selectedCurrency,selectedMarginality, data));
-        } on DioError {
-          List<MarginalityCompanies> data = [];
-          String selectedCurrency = sharedPref.getMarginalityCurrency();
-          emit(_CompaniesLoaded(selectedCurrency, selectedMarginality, data));
-        }
-        break;
-    }
-    // Future.delayed(const Duration(milliseconds:100));
-  }
-  Future<void> _onNewFilterSelected(
-      NewFilterSelected event,
-      Emitter<MarginalityState> emit,
-      ) async {
-    emit(const _Loading());
-    String selectedMarginality = sharedPref.getMarginalityChoice();
-    switch(selectedMarginality) {
-      case 'Маржинальность сотрудников':
-        try {
-          List<MarginalityEmployees> data = await getFilteredData() as List<MarginalityEmployees>;
-          String selectedCurrency = sharedPref.getMarginalityCurrency();
-          emit(_EmployeesLoaded(selectedCurrency,selectedMarginality, data));
-        } on DioError{
-          List<MarginalityEmployees> data = [];
-          String selectedCurrency = sharedPref.getMarginalityCurrency();
-          emit(_EmployeesLoaded(selectedCurrency, selectedMarginality, data));
-        }
-        break;
-      case 'Маржинальность проекта':
-        try {
-          List<MarginalityProjects> data = await getFilteredData() as List<MarginalityProjects>;
-          String selectedCurrency = sharedPref.getMarginalityCurrency();
-          emit(_ProjectsLoaded(selectedCurrency, selectedMarginality, data));
-        } on DioError{
-          List<MarginalityProjects> data = [];
-          String selectedCurrency = sharedPref.getMarginalityCurrency();
-          emit(_ProjectsLoaded(selectedCurrency, selectedMarginality, data));
-        }
-        break;
-      case 'Маржинальность отдела':
-        try {
-          List<MarginalityDepartments> data = await getFilteredData() as List<
-              MarginalityDepartments>;
-          String selectedCurrency = sharedPref.getMarginalityCurrency();
-          emit(_DepartmentsLoaded(selectedCurrency, selectedMarginality, data));
-        } on DioError {
-          List<MarginalityDepartments> data = [];
-          String selectedCurrency = sharedPref.getMarginalityCurrency();
-          emit(_DepartmentsLoaded( selectedCurrency, selectedMarginality, data));
-        }
-        break;
-      case 'Маржинальность компании':
-        try {
-          List<MarginalityCompanies> data = await getFilteredData() as List<MarginalityCompanies>;
-          String selectedCurrency = sharedPref.getMarginalityCurrency();
-          emit(_CompaniesLoaded(selectedCurrency,selectedMarginality, data));
-        } on DioError {
-          List<MarginalityCompanies> data = [];
-          String selectedCurrency = sharedPref.getMarginalityCurrency();
-          emit(_CompaniesLoaded(selectedCurrency, selectedMarginality, data));
-        }
-        break;
-    }
-  }
-  MarginalityBloc(this.repository, this.sharedPref) : super(const MarginalityState.initial()) {
-    on<MarginalityEvent>((event, emit) async{
-      await event.map(started: (started) => _onStarted(started, emit),
-          newFilterSelected: (newFilterSelected) =>
-        _onNewFilterSelected(newFilterSelected, emit));
-      },
-        transformer: sequential());
-  }
-  Future<List<Object>> getFilteredData() async{
-    String selectedMarginality = sharedPref.getMarginalityChoice();
-    String selectedPeriod = sharedPref.getMarginalityPeriodItem();
-    String selectedCurrency = sharedPref.getMarginalityCurrency();
-    String selectedDate = '';
-    List<MarginalityProjects> defaultData;
-    switch (selectedPeriod) {
-      case 'Год':
-        selectedDate = sharedPref.getMarginalityPeriodYear();
-        break;
-      case 'Месяц':
-        selectedDate = sharedPref.getMarginalityPeriodMonth();
-        break;
-    }
-
-    switch(selectedMarginality) {
-      case 'Маржинальность сотрудников':
-        List<String> selectedDateRange = formattingDateString(selectedDate);
-        List<MarginalityEmployees> data =  await repository.getMarginalityEmployees(
-            to: selectedDateRange[0],
-            from: selectedDateRange[1],
-            currency: selectedCurrency);
-        return data;
-      case 'Маржинальность проекта':
-        List<String> selectedDateRange = formattingDateString(selectedDate);
-        List<MarginalityProjects> data =  await repository.getMarginalityProjects(
-            to: selectedDateRange[0],
-            from: selectedDateRange[1],
-            currency: selectedCurrency);
-        return data;
-      case 'Маржинальность отдела':
-        List<String> selectedDateRange = formattingDateString(selectedDate);
-        List<MarginalityDepartments> data =  await repository.getMarginalityDepartments(
-            to: selectedDateRange[0],
-            from: selectedDateRange[1],
-            currency: selectedCurrency);
-        return data;
-      case 'Маржинальность компании':
-        List<String> selectedDateRange = formattingDateString(selectedDate);
-        List<MarginalityCompanies> data =  await repository.getMarginalityCompanies(
-            to: selectedDateRange[0],
-            from: selectedDateRange[1],
-            currency: selectedCurrency);
-        return data;
-      default:
-        List<String> selectedDateRange = formattingDateString(selectedDate);
-        defaultData = await repository.getMarginalityProjects(
-            to: selectedDateRange[0],
-            from: selectedDateRange[1],
-            currency: selectedCurrency);
-        return defaultData;
-    }
+  String selectedMarginality = '';
+  String selectedPeriod = '';
+  String selectedCurrency = '';
+  List<MarginalityEmployees> employeesData = [];
+  List<MarginalityProjects> projectsData = [];
+  List<MarginalityDepartments> departmentsData = [];
+  List<MarginalityCompanies> companiesData = [];
 
 
-  }
-  List<String> formattingDateString(String str) {// 01/03/2024 - 31/03/2024
+  List<String> formattingDateString(String str) {// 01/03/2024 - 31/03/2023
     List<String> dateRange = str.split(' - ');
     String from = DateFormat('yyyy-MM-dd').format(DateTime.utc(
       int.parse('2${dateRange[0].substring(7,10)}'),
@@ -208,4 +44,75 @@ class MarginalityBloc extends Bloc<MarginalityEvent, MarginalityState> {
     return [to, from];
 
   }
+
+  void _fetchCurrentFiltredData() async{
+    selectedMarginality = sharedPref.getMarginalityChoice();
+    selectedPeriod = sharedPref.getMarginalityPeriodItem();
+    selectedCurrency = sharedPref.getMarginalityCurrency();
+    String selectedDate = '';
+    switch (selectedPeriod) {
+      case 'Год':
+        selectedDate = sharedPref.getMarginalityPeriodYear();
+        break;
+      case 'Месяц':
+        selectedDate = sharedPref.getMarginalityPeriodMonth();
+        break;
+    }
+    List<String> selectedDateRange = formattingDateString(selectedDate);
+    switch(selectedMarginality) {
+      case 'Маржинальность сотрудников':
+        employeesData =  await repository.getMarginalityEmployees(
+            to: selectedDateRange[0],
+            from: selectedDateRange[1],
+            currency: selectedCurrency);
+        break;
+      case 'Маржинальность проекта':
+        projectsData =  await repository.getMarginalityProjects(
+            to: selectedDateRange[0],
+            from: selectedDateRange[1],
+            currency: selectedCurrency);
+        break;
+      case 'Маржинальность отдела':
+        departmentsData =  await repository.getMarginalityDepartments(
+            to: selectedDateRange[0],
+            from: selectedDateRange[1],
+            currency: selectedCurrency);
+        break;
+      case 'Маржинальность компании':
+        companiesData =  await repository.getMarginalityCompanies(
+            to: selectedDateRange[0],
+            from: selectedDateRange[1],
+            currency: selectedCurrency);
+        break;
+    }
+
+  }
+  Future<void> _onFetchData(
+      FetchData event,
+      Emitter<MarginalityState> emit,
+      ) async {
+    emit(const _Loading());
+    _fetchCurrentFiltredData();
+    switch(selectedMarginality) {
+      case 'Маржинальность сотрудников':
+          emit(_EmployeesLoaded(selectedCurrency, selectedMarginality, employeesData));
+        break;
+      case 'Маржинальность проекта':
+          emit(_ProjectsLoaded(selectedCurrency, selectedMarginality, projectsData));
+        break;
+      case 'Маржинальность отдела':
+          emit(_DepartmentsLoaded(selectedCurrency, selectedMarginality, departmentsData));
+        break;
+      case 'Маржинальность компании':
+          emit(_CompaniesLoaded(selectedCurrency,selectedMarginality, companiesData));
+        break;
+    }
+  }
+  MarginalityBloc(this.repository, this.sharedPref) : super(const MarginalityState.initial()) {
+    on<MarginalityEvent>((event, emit) async{
+      await event.map(fetchData: (fetchData) => _onFetchData(fetchData, emit));
+      },
+        transformer: sequential());
+  }
+
 }

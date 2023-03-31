@@ -73,7 +73,7 @@ class _CurrencyRadioState extends State<CurrencyRadio> {
                               context.read<MarginalityFilterBloc>().
                               add(const MarginalityFilterEvent.valueChanged());
                               context.read<MarginalityBloc>().
-                              add(const MarginalityEvent.newFilterSelected());
+                              add(const MarginalityEvent.fetchData());
                             },
                           ),
                         ),
@@ -101,7 +101,7 @@ class _CurrencyRadioState extends State<CurrencyRadio> {
                               context.read<MarginalityFilterBloc>().
                               add(const MarginalityFilterEvent.valueChanged());
                               context.read<MarginalityBloc>().
-                              add(const MarginalityEvent.newFilterSelected());
+                              add(const MarginalityEvent.fetchData());
                             },
                           ),
                         ),

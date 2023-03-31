@@ -18,39 +18,33 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$MarginalityEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function() newFilterSelected,
+    required TResult Function() fetchData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function()? newFilterSelected,
+    TResult? Function()? fetchData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function()? newFilterSelected,
+    TResult Function()? fetchData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Started value) started,
-    required TResult Function(NewFilterSelected value) newFilterSelected,
+    required TResult Function(FetchData value) fetchData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Started value)? started,
-    TResult? Function(NewFilterSelected value)? newFilterSelected,
+    TResult? Function(FetchData value)? fetchData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Started value)? started,
-    TResult Function(NewFilterSelected value)? newFilterSelected,
+    TResult Function(FetchData value)? fetchData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -75,33 +69,35 @@ class _$MarginalityEventCopyWithImpl<$Res, $Val extends MarginalityEvent>
 }
 
 /// @nodoc
-abstract class _$$StartedCopyWith<$Res> {
-  factory _$$StartedCopyWith(_$Started value, $Res Function(_$Started) then) =
-      __$$StartedCopyWithImpl<$Res>;
+abstract class _$$FetchDataCopyWith<$Res> {
+  factory _$$FetchDataCopyWith(
+          _$FetchData value, $Res Function(_$FetchData) then) =
+      __$$FetchDataCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$StartedCopyWithImpl<$Res>
-    extends _$MarginalityEventCopyWithImpl<$Res, _$Started>
-    implements _$$StartedCopyWith<$Res> {
-  __$$StartedCopyWithImpl(_$Started _value, $Res Function(_$Started) _then)
+class __$$FetchDataCopyWithImpl<$Res>
+    extends _$MarginalityEventCopyWithImpl<$Res, _$FetchData>
+    implements _$$FetchDataCopyWith<$Res> {
+  __$$FetchDataCopyWithImpl(
+      _$FetchData _value, $Res Function(_$FetchData) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Started implements Started {
-  const _$Started();
+class _$FetchData implements FetchData {
+  const _$FetchData();
 
   @override
   String toString() {
-    return 'MarginalityEvent.started()';
+    return 'MarginalityEvent.fetchData()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Started);
+        (other.runtimeType == runtimeType && other is _$FetchData);
   }
 
   @override
@@ -110,30 +106,27 @@ class _$Started implements Started {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function() newFilterSelected,
+    required TResult Function() fetchData,
   }) {
-    return started();
+    return fetchData();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function()? newFilterSelected,
+    TResult? Function()? fetchData,
   }) {
-    return started?.call();
+    return fetchData?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function()? newFilterSelected,
+    TResult Function()? fetchData,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started();
+    if (fetchData != null) {
+      return fetchData();
     }
     return orElse();
   }
@@ -141,139 +134,34 @@ class _$Started implements Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Started value) started,
-    required TResult Function(NewFilterSelected value) newFilterSelected,
+    required TResult Function(FetchData value) fetchData,
   }) {
-    return started(this);
+    return fetchData(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Started value)? started,
-    TResult? Function(NewFilterSelected value)? newFilterSelected,
+    TResult? Function(FetchData value)? fetchData,
   }) {
-    return started?.call(this);
+    return fetchData?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Started value)? started,
-    TResult Function(NewFilterSelected value)? newFilterSelected,
+    TResult Function(FetchData value)? fetchData,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    if (fetchData != null) {
+      return fetchData(this);
     }
     return orElse();
   }
 }
 
-abstract class Started implements MarginalityEvent {
-  const factory Started() = _$Started;
-}
-
-/// @nodoc
-abstract class _$$NewFilterSelectedCopyWith<$Res> {
-  factory _$$NewFilterSelectedCopyWith(
-          _$NewFilterSelected value, $Res Function(_$NewFilterSelected) then) =
-      __$$NewFilterSelectedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$NewFilterSelectedCopyWithImpl<$Res>
-    extends _$MarginalityEventCopyWithImpl<$Res, _$NewFilterSelected>
-    implements _$$NewFilterSelectedCopyWith<$Res> {
-  __$$NewFilterSelectedCopyWithImpl(
-      _$NewFilterSelected _value, $Res Function(_$NewFilterSelected) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$NewFilterSelected implements NewFilterSelected {
-  const _$NewFilterSelected();
-
-  @override
-  String toString() {
-    return 'MarginalityEvent.newFilterSelected()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$NewFilterSelected);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function() newFilterSelected,
-  }) {
-    return newFilterSelected();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function()? newFilterSelected,
-  }) {
-    return newFilterSelected?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function()? newFilterSelected,
-    required TResult orElse(),
-  }) {
-    if (newFilterSelected != null) {
-      return newFilterSelected();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Started value) started,
-    required TResult Function(NewFilterSelected value) newFilterSelected,
-  }) {
-    return newFilterSelected(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Started value)? started,
-    TResult? Function(NewFilterSelected value)? newFilterSelected,
-  }) {
-    return newFilterSelected?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Started value)? started,
-    TResult Function(NewFilterSelected value)? newFilterSelected,
-    required TResult orElse(),
-  }) {
-    if (newFilterSelected != null) {
-      return newFilterSelected(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class NewFilterSelected implements MarginalityEvent {
-  const factory NewFilterSelected() = _$NewFilterSelected;
+abstract class FetchData implements MarginalityEvent {
+  const factory FetchData() = _$FetchData;
 }
 
 /// @nodoc

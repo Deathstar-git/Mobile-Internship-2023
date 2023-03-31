@@ -65,7 +65,7 @@ class MarginalityChoiceDropdown extends StatelessWidget {
                       onChanged: (value) {
                         context.read<MarginalityChoiceBloc>().sharedPref.setMarginalityChoice(value as String);
                         context.read<MarginalityChoiceBloc>().add(const MarginalityChoiceEvent.valueChanged());
-                        context.read<MarginalityBloc>().add(const MarginalityEvent.newFilterSelected());
+                        context.read<MarginalityBloc>().add(const MarginalityEvent.fetchData());
                       },
                       buttonStyleData: const ButtonStyleData(
                         height: 40,

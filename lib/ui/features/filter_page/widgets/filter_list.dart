@@ -65,7 +65,7 @@ class FilterList extends StatelessWidget {
                                       children: [
                                         PeriodsDropdown(periods: periods, selectedPeriod: selectedPeriod),
                                         SizedBox(
-                                            width: 185,
+                                            width: 220,
                                             height: 50,
                                             child: MarginalityTableCalendar(
                                                 selectedPeriod: selectedPeriod,

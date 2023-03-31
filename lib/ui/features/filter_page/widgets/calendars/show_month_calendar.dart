@@ -49,7 +49,7 @@ class ShowMonthCalendar extends StatelessWidget {
                 context.read<MarginalityFilterBloc>().
                 add(const MarginalityFilterEvent.valueChanged());
                 context.read<MarginalityBloc>().
-                add(const MarginalityEvent.newFilterSelected());
+                add(const MarginalityEvent.fetchData());
               },
               selectionMode: DateRangePickerSelectionMode.single,
             )

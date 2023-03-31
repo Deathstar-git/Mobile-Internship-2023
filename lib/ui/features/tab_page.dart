@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttericon/font_awesome_icons.dart';
+import 'package:fluttericon/font_awesome5_icons.dart';
 import '../common/colors.dart';
 import '../navigation/routes.gr.dart';
 class TabPage extends StatelessWidget {
@@ -32,7 +32,7 @@ class TabPage extends StatelessWidget {
               label: 'Маржинальность',
             ),
             BottomNavigationBarItem(
-              icon: Icon(FontAwesome.chart_line,
+              icon: Icon(FontAwesome5.chart_line,
                   color:AppColors.gray_2),
               label: 'ЗП/Выручка',
             ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_internship_1/domain/features/marginality/models/marginality_projects.dart';
 import 'package:mobile_internship_1/ui/common/colors.dart';
+import 'package:mobile_internship_1/ui/features/main_page/widgets/datatables/row_builder.dart';
 
 
 class MarginalityProjectsDatatable extends StatefulWidget {
@@ -109,52 +110,6 @@ class _MarginalityProjectsDatatableState extends State<MarginalityProjectsDatata
         },
       ),
     ];
-    var rows = _data.map((marginality) {
-      int maxCellLength = 10;
-      DataRow row = DataRow(cells: []);
-      if (marginality.name.length > maxCellLength) {
-
-        row.cells.add(DataCell(
-            Text('${marginality.name.substring(0, maxCellLength)}...')
-        )
-        );
-      } else {
-        row.cells.add(DataCell( Text(marginality.name)));
-      }
-      if (marginality.margin.toString().length > maxCellLength) {
-        if(_selectedCurrency == 'rub') {
-          row.cells.add(DataCell(
-              Text('${'${marginality.margin}'.substring(0, maxCellLength)}...₽')
-          )
-          );
-        }
-        if(_selectedCurrency == 'usd') {
-          row.cells.add(DataCell(
-              Text('\$${'${marginality.margin}'.substring(0, maxCellLength)}...')
-          )
-          );
-        }
-      } else {
-        if (_selectedCurrency == 'rub') {
-          row.cells.add(DataCell(Text('${'${marginality.margin}'}₽')));
-        }
-        if (_selectedCurrency == 'usd') {
-          row.cells.add(DataCell(Text('\$${'${marginality.margin}'}')));
-        }
-      }
-      if (marginality.marginality.toString().length > maxCellLength - 6) {
-        row.cells.add(DataCell(
-            Text('${'${marginality.marginality}'.substring(0, maxCellLength - 6)}...%')
-        )
-        );
-      } else {
-        row.cells.add(DataCell(
-            Text('${'${marginality.marginality}'}%')
-        )
-        );
-      }
-      return row;
-    });
     return Center(
         child: Column(
             children:[
@@ -222,7 +177,7 @@ class _MarginalityProjectsDatatableState extends State<MarginalityProjectsDatata
                         columnSpacing: 40,
                         horizontalMargin: 15,
                         columns: cols,
-                        rows: rows.toList(),
+                        rows: rowBuilder(_data, _selectedCurrency).toList(),
                         sortColumnIndex: _sortColumnIndex,
                         sortAscending: _sortAsc,
                       )

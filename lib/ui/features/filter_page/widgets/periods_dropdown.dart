@@ -62,7 +62,7 @@ class PeriodsDropdown extends StatelessWidget {
                     onChanged: (value) {
                       context.read<MarginalityFilterBloc>().sharedPref.setMarginalityPeriodItem(value as String);
                       context.read<MarginalityFilterBloc>().add(const MarginalityFilterEvent.valueChanged());
-                      context.read<MarginalityBloc>().add(const MarginalityEvent.newFilterSelected());
+                      context.read<MarginalityBloc>().add(const MarginalityEvent.fetchData());
                     },
                     buttonStyleData: ButtonStyleData(
                         height: 40,
