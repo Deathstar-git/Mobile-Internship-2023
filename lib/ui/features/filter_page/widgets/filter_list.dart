@@ -60,12 +60,12 @@ class FilterList extends StatelessWidget {
                                     )
                                 ),
                                 Padding(
-                                    padding: const EdgeInsets.only(top: 20, bottom: 10, right: 0),
+                                    padding: const EdgeInsets.only(top: 20, bottom: 10, right: 0, left:0),
                                     child: Row(
                                       children: [
                                         PeriodsDropdown(periods: periods, selectedPeriod: selectedPeriod),
                                         SizedBox(
-                                            width: 220,
+                                            width: 185,
                                             height: 50,
                                             child: MarginalityTableCalendar(
                                                 selectedPeriod: selectedPeriod,

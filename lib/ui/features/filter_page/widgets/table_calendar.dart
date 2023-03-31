@@ -57,28 +57,68 @@ class MarginalityTableCalendar extends StatelessWidget {
     switch (selectedPeriod) {
       case 'Год':
         return OutlinedButton(
+          style: OutlinedButton.styleFrom(
+              side: const BorderSide(width: 1.0, color: AppColors.black_3)),
           onPressed: () {
             _pickYear(context);
           },
-          child: Text(
-              _convertDateYeartoString(selectedYear),
-              style: const TextStyle(
-                  color:AppColors.gray_1)
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  _convertDateYeartoString(selectedYear),
+                  style: const TextStyle(
+                      color:AppColors.gray_1),
+                ),
+                const Padding(
+                    padding: EdgeInsets.only(left:10),
+                    child:ColoredBox(
+                      color: AppColors.black_3,
+                      child: SizedBox(
+                        width:50,
+                        height: 50,
+                        child:Icon(
+                            Icons.calendar_today_outlined,
+                            color: AppColors.gray_3),
+                      ),
+                    )
+                )
+              ]
           )
         );
       case 'Месяц':
         return OutlinedButton(
+          style: OutlinedButton.styleFrom(
+        side: const BorderSide(width: 1.0, color: AppColors.black_3)),
           onPressed: () {
             _pickMonth(context);
           },
-          child: Text(
-              _convertDateMonthtoString(selectedMonth),
-              style: const TextStyle(
-                  color:AppColors.gray_1)
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                    _convertDateMonthtoString(selectedMonth),
+                    style: const TextStyle(
+                        color:AppColors.gray_1),
+                ),
+                const Padding(
+                    padding: EdgeInsets.only(left:10),
+                    child:ColoredBox(
+                  color: AppColors.black_3,
+                  child: SizedBox(
+                    width:50,
+                    height: 50,
+                    child:Icon(
+                        Icons.calendar_today_outlined,
+                        color: AppColors.gray_3),
+                      ),
+                  )
+                )
+              ]
           )
         );
       default:
-        return const Text('Штош');
+        return const Text('');
 
     }
   }
