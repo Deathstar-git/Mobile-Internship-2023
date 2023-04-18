@@ -9,7 +9,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   # Annotations
   freezed_annotation: ^2.2.0
   json_annotation: ^4.8.0
@@ -44,6 +43,8 @@ dependencies:
   # Widgets
   flutter_svg: ^2.0.3
   dropdown_button2: ^2.0.0
+  syncfusion_flutter_datepicker: ^21.1.35
+  fluttericon: ^2.0.0
 
 dev_dependencies:
   # Tests
@@ -65,4 +66,6 @@ dev_dependencies:
   dart_code_metrics: ^5.6.0
 
 flutter:
+  assets:
+    - assets/svg/
   uses-material-design: true
